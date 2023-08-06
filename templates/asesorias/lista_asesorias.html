@@ -1,0 +1,49 @@
+{% extends 'index/index.html' %}
+{% block content %}
+
+            <a href="{% url 'lista_asesorias'%}" class="titulo">Asesorias</a>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Guia Suplemento</th>
+                    <th>Nutricion</th>
+                    <th>Tarifa</th>
+                    <th>Duracion</th>
+                    <th>
+                    <a href="{% url 'crear_asesorias' %}"; class="boton_crear">Crear</a>
+                    </th>  
+                </tr>
+                </thead>
+                <tbody>
+                {% for asesorias in asesorias %}
+                <tr>
+                    <td>{{ asesorias.Guia_Suplemento }}</td>
+                    <td>{{ asesorias.Nutricion }}</td>
+                    <td>{{ asesorias.Tarifa }}</td>
+                    <td>{{ asesorias.Duracion }}</td>
+                    <td>
+                    <a href="{% url 'editar_asesorias' pk=asesorias.pk %}" class="boton_editar">Editar</a>
+                    <a href="{% url 'eliminar_asesorias' pk=asesorias.pk %}" class="boton_eliminar">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                <span>
+                    {% if page_obj.has_previous %}
+
+                    <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+                    {% endif %}
+
+                    <span class="paginacion">
+                        Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+                    </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
+                {% endif %}
+                </span>
+{% endblock %}  

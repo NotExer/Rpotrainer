@@ -1,0 +1,9 @@
+{% extends 'index/index.html' %}
+{% block content %}
+<form method='post'>
+    {% csrf_token %}
+    <h3>¿Deseas eliminar el registro de {{cliente.Nombre}} {{cliente.Apellido}}?</h3>
+    <button type="submit">Si, eliminar</button>
+    <a href="{% url 'lista_cliente' %}">Cancelar</a>
+</form>
+{% endblock %}

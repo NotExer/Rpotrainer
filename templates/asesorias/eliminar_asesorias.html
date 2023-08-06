@@ -1,0 +1,10 @@
+{% extends 'index/index.html' %}
+
+{% block content %}
+<form method='post'>
+    {% csrf_token %}
+    <h3>¿Deseas eliminar el registro de {{asesorias.Guia_Suplementos}}?</h3>
+    <button type="submit">Si, eliminar</button>
+    <a href="{% url 'lista_asesorias' %}">Cancelar</a>
+</form>
+{% endblock %}

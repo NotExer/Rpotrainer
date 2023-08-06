@@ -1,0 +1,49 @@
+{% extends 'index/index.html' %}
+{% block content %}
+     
+
+
+<a href="{% url 'lista_nutricion'%}" class="titulo">Nutricion</a>
+<table >
+<thead>
+    <tr>
+        <th>Tarifa</th>
+        <th>Duracion</th>
+        <th>Guia Alimentos</th>
+        <th>Lista Alimentos</th>
+        <th>Acciones</th>
+        <th>
+        <a href="{% url 'crear_nutricion' %}" class="boton_crear">Crear</a>
+        </th>  
+    </tr>
+</thead>
+<tbody>
+    {% for nutricion in nutricion %}
+    <tr>
+    <td>{{ nutricion.Tarifa }}</td>
+    <td>{{ nutricion.Duracion }}</td>
+    <td>{{ nutricion.Guia_Alimentos }}</td>
+    <td>{{ nutricion.Lista_Alimentos }}</td>
+    <td>
+        <a href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="boton_editar">Editar</a>
+        <a href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="boton_eliminar">Eliminar</a>
+    </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<div>
+<span>
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; Primero </a>
+        <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
+        {% endif %}
+        <span>
+        Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+        </span>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
+    <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+    {% endif %}
+</span>
+{% endblock %}  

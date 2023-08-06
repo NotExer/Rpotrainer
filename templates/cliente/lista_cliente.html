@@ -1,0 +1,52 @@
+{% extends 'index/index.html' %}
+{% block content %}
+
+<a href="{% url 'lista_cliente'%}" class="titulo">Cliente</a>
+<table>
+<thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Edad</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th>Domicilio</th>
+
+    <th>
+        <a href="{% url 'crear_cliente' %}"; class="boton_crear">Crear</a>
+    </th>  
+    </tr>
+</thead>
+<tbody>
+    {% for cliente in cliente %}
+    <tr>
+    <td>{{ cliente.Nombre }}</td>
+    <td>{{ cliente.Apellidos }}</td>
+    <td>{{ cliente.Edad }}</td>
+    <td>{{ cliente.Telefono }}</td>
+    <td>{{ cliente.Email }}</td>
+    <td>{{ cliente.Domicilio }}</td>
+    <td>
+        <a href="{% url 'editar_cliente' pk=cliente.pk %}" class="boton_editar">Editar</a>
+        <a href="{% url 'eliminar_cliente' pk=cliente.pk %}" class="boton_eliminar">Eliminar</a>
+    </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<div>
+<span>
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; Primero </a>
+        <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
+        {% endif %}
+        <span>
+        Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+        </span>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
+    <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+    {% endif %}
+</span>
+
+{% endblock %}  

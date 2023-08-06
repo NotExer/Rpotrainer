@@ -1,0 +1,49 @@
+{% extends 'index/index.html' %}
+{% block content %}
+
+<a href="{% url 'lista_entrenador'%}" class="titulo">Entrenador</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+          <th>nombre</th>
+          <th>apellido</th>
+          <th>correo</th>
+          <th>numero_contacto</th>
+          <th>Acciones</th>
+          <th>
+            <a href="{% url 'crear_entrenador' %}" class="boton_crear">Crear</a>
+          </th>  
+      </tr>
+    </thead>
+    <tbody>
+      {% for entrenador in entrenador %}
+      <tr>
+        <td>{{ entrenador.nombre }}</td>
+        <td>{{ entrenador.apellido }}</td>
+        <td>{{ entrenador.correo }}</td>
+        <td>{{ entrenador.numero_contacto }}</td>
+        <td>
+          <a href="{% url 'editar_entrenador' pk=entrenador.pk %}" class="boton_editar">Editar</a>
+          <a href="{% url 'eliminar_entrenador' pk=entrenador.pk %}" class="boton_eliminar">Eliminar</a>
+        </td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div>
+    <span>
+          {% if page_obj.has_previous %}
+          <a href="?page=1">&laquo; Primero </a>
+          <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
+          {% endif %}
+          <span>
+            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+          </span>
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
+      <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+      {% endif %}
+    </span>
+
+{% endblock %}  
