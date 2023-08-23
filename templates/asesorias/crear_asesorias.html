@@ -2,8 +2,8 @@
 {% block content %}
 <form method='post'>
     {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit" class="boton_crear">Crear</button>
-    <a href="{% url 'lista_asesorias' %}" class="boton_eliminar">Cancelar</a>
+    {{form.as_p }}
+    <button type="submit" class="boton_crear" class="boton_crear">Crear</button>
+    <a href="{% url 'lista_asesorias' %}" class="boton_eliminar" class="boton_eliminar">Cancelar</a>
 </form>
 {% endblock %}

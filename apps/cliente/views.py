@@ -30,3 +30,5 @@ class clienteDeleteView(DeleteView):
     model = cliente
     template_name = 'cliente/eliminar_cliente.html'
     success_url = reverse_lazy('lista_cliente')
+
+

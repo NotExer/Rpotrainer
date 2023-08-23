@@ -19,8 +19,8 @@ class asesoriasform(forms.ModelForm):
             'Duracion':'Duracion',
         }
         widgets = {
-            'Guia_Suplemento': forms.TextInput(attrs={'class': 'form-control'}),
-            'Nutricion': forms.NumberInput(attrs={'class': 'form-control'}),
-            'Tarifa': forms.NumberInput(attrs={'class': 'form-control'}),
-            'Duracion': forms.NumberInput(attrs={'class': 'form-control'}),
+            'Guia_Suplemento': forms.TextInput(attrs={'class': 'hola'}),
+            'Nutricion': forms.NumberInput(attrs={'class': 'hola'}),
+            'Tarifa': forms.NumberInput(attrs={'class': 'hola'}),
+            'Duracion': forms.NumberInput(attrs={'class': 'hola'}),
         }

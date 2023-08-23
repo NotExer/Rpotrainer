@@ -13,16 +13,16 @@ class asesoriasListView(ListView):
 class asesoriasCreateView(CreateView):
     model = asesorias
     form_class = asesoriasform
-    template_name = 'asesorias/crear_asesorias.html'
+    template_name = 'asesorias/lista_asesorias.html'
     success_url = reverse_lazy('lista_asesorias')
 
 class asesoriasUpdateView(UpdateView):
     model = asesorias
     form_class = asesoriasform
-    template_name = 'asesorias/editar_asesorias.html'
+    template_name = 'asesorias/lista_asesorias.html'
     success_url = reverse_lazy('lista_asesorias')
 
 class asesoriasDeleteView(DeleteView):
     model = asesorias
-    template_name = 'asesorias/eliminar_asesorias.html'
+    template_name = 'asesorias/lista_asesorias.html'
     success_url = reverse_lazy('lista_asesorias')

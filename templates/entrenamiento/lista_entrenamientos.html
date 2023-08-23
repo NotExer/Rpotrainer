@@ -2,8 +2,16 @@
 {% block content %}
               
 
-<a href="{% url 'lista_entrenamientos'%}" class="titulo">Entrenamiento</a>
-<table>
+
+<div style="padding-bottom: 2%; align-items: center;" >
+  <center>
+    <h1 class="titulo">Entrenamiento</h1>
+  </center>
+</div>
+
+
+
+  <table>
     <thead>
       <tr>
         <th>Tipo</th>
@@ -11,7 +19,6 @@
         <th>Duracion</th>
         <th>Modalidad</th>
         <th>Lista De Ejercicios</th>
-        <th>Acciones</th>
         <th>
           <a href="{% url 'crear_entrenamiento' %}" class="boton_crear">Crear</a>
         </th>  
@@ -33,18 +40,23 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
   <div>
     <span>
-          {% if page_obj.has_previous %}
-          <a href="?page=1">&laquo; Primero </a>
-          <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
-          {% endif %}
-          <span>
-            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-          </span>
+      {% if page_obj.has_previous %}
+
+      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+      {% endif %}
+
+      <span class="paginacion">
+          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+      </span>
+
       {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
-      <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+      <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
       {% endif %}
     </span>
+  </div>
+</div>  
+
 {% endblock %}  

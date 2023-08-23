@@ -1,133 +1,94 @@
-{% load static%}
-<!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
-<html lang="en" dir="ltr">
+{% load static %}
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title> Responsive Sidebar Menu  | CodingLab </title>
-    <link rel="stylesheet" href="{% static 'assets/css/sidebar.css'%}">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">JulianRPO Trainer</div>
-        <i class='bx bx-menu' id="btn" ></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
-      </li>
-      <li>
-       <a href="#">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
-       </a>
-       <span class="tooltip">User</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
-       </a>
-       <span class="tooltip">Analytics</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
-       </a>
-       <span class="tooltip">Files</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
-    </ul>
-  </div>
+    <title>RPO TRAINER</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	</head>
+	<body class="is-preload landing">
+		<div>
+			<div id="page-wrapper">
+				<header id="header">
+					<h1 id="logo"><a href="{% url 'Home' %}" >RPO TRAINER</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a class="inicio-hover" href="index.html">Inicio</a></li>
+							<li>
+								<a href="#two">Planes</a>
+								<ul>
+									<li><a href="{% url 'lista_cliente' %}"> Cliente</a></li>
+									<li><a href="{% url 'lista_asesorias' %}">Asesorias</a></li>
+									<li><a href="{% url 'lista_nutricion' %}">Nutricion</a></li>
+									<li>
+									</li>
+								</ul>
+							</li>
+							<li><a href="{% url 'log-out' %}" class="button primary">Cerrar Sesión</a></li>
+						</ul>
+					</nav>
+				</header>
+			</div>
+		</div>
+		<div style="padding: 5%;">
+		</div>
+		<div>
+  		{% block content  %}
+  		{% endblock  %}
+		<div class="modal" id="popup">
+		</div>
+	</div>
 
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.youtube.com/channel/UC97NkE4ccH87VLQnK60u97Q" class="icon brands alt fa-YouTube"><span class="label">YouTube</span></a></li>
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/julianrpo.trainerr/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/julianrpo_trainer/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://www.tiktok.com/@julianrpo_trainer" class="icon brands alt fa-tiktok"><span class="label">tiktok</span></a></li>
+						<li><a href="mailto:samurpo20@correo.com" class="icon solid alt fa-envelope"><span class="label">WhatsApp</span></a></li>
+						
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
 
+		</div>
 
-  <section class="home-section">
-    {% block content %}
-
-    {% endblock %}
-  </section>
-
-
-
-
-  <script>
-  let sidebar = document.querySelector(".sidebar");
-  let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
-
-  closeBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("open");
-    menuBtnChange();//calling the function(optional)
-  });
-
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
-  });
-
-  // following are the code to change sidebar button(optional)
-  function menuBtnChange() {
-   if(sidebar.classList.contains("open")){
-     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-   }else {
-     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-   }
-  }
-  </script>
-</body>
+		<!-- Scripts -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+			<script src="{% static 'assets/js/bootstrap.js' %}"></script>
+			<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+			{% block control_modal %}
+			<script>
+				function abrir_modal(url)
+				{
+					$("#popup").load(url, function(){
+						$(this).modal({
+							backdrop:'static',
+							keyboard:false
+						})
+						$(this).modal("show");
+					});
+					return false;
+				}
+				function cerrar_modal()
+				{
+					$('#popup').modal('hide');
+					return false;
+				}
+			</script>
+			{% endblock %}
+	</body>
 </html>
-
-

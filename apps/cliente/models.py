@@ -9,4 +9,5 @@ class cliente(models.Model):
     Domicilio = models.CharField(max_length=200)
     
     def __str__(self):
-        return '{} {}'.format(self.nombre,self.apellidos)
+        return '{} {}'.format(self.Nombre,self.Apellidos)
+    

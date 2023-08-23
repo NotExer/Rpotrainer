@@ -23,11 +23,11 @@ class diagnosticoform(forms.ModelForm):
         
         labels= {
             'Objetivo_Fisico':'Objetivo Fisico',
-            'Nivel_entrenamiento_años':'Nivel entrenamiento años',
+            'Nivel_entrenamiento_años':'Nivel de entrenamiento (años)',
             'Frecuencia_semanal':'Frecuencia semanal',
             'Dias_de_entrenamiento':'Dias de entrenamiento',
-            'Tiempo_Por_Sesion':'Tiempo Por Sesion',
-            'Material_Entreno':'Material Entreno',
+            'Tiempo_Por_Sesion':'Tiempo por sesion',
+            'Material_Entreno':'Material de entreno',
             'Fuma':'Fuma',
             'Consume_alcohol':'Consume alcohol',
             'Cirugias_anteriores':'Cirugias anteriores',

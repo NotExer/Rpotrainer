@@ -2,6 +2,7 @@ from django import forms
 from apps.cliente.models import cliente
 
 class clienteform(forms.ModelForm):
+
     class Meta:
         model=cliente
         fields = [

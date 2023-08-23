@@ -3,7 +3,14 @@
      
 
 
-<a href="{% url 'lista_nutricion'%}" class="titulo">Nutricion</a>
+
+<div style="padding-bottom: 2%; align-items: center;" >
+    <center>
+      <h1 class="titulo">Nutricion</h1>
+    </center>
+  </div>
+
+
 <table >
 <thead>
     <tr>
@@ -11,7 +18,6 @@
         <th>Duracion</th>
         <th>Guia Alimentos</th>
         <th>Lista Alimentos</th>
-        <th>Acciones</th>
         <th>
         <a href="{% url 'crear_nutricion' %}" class="boton_crear">Crear</a>
         </th>  
@@ -33,17 +39,19 @@
 </tbody>
 </table>
 <div>
-<span>
+    <span>
         {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; Primero </a>
-        <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
+
+        <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
         {% endif %}
-        <span>
-        Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+
+        <span class="paginacion">
+            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
         </span>
+
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
-    <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+    <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
     {% endif %}
-</span>
+    </span>
 {% endblock %}  

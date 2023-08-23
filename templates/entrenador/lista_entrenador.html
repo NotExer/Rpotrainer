@@ -1,15 +1,22 @@
 {% extends 'index/index.html' %}
 {% block content %}
 
-<a href="{% url 'lista_entrenador'%}" class="titulo">Entrenador</a>
+
+
+<div style="padding-bottom: 2%; align-items: center;" >
+  <center>
+    <h1 class="titulo">Entrenador</h1>
+  </center>
+</div>
+
+
 <table class="table table-bordered">
     <thead>
         <tr>
-          <th>nombre</th>
-          <th>apellido</th>
-          <th>correo</th>
-          <th>numero_contacto</th>
-          <th>Acciones</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Numero Contacto</th>
           <th>
             <a href="{% url 'crear_entrenador' %}" class="boton_crear">Crear</a>
           </th>  
@@ -33,17 +40,19 @@
   </table>
   <div>
     <span>
-          {% if page_obj.has_previous %}
-          <a href="?page=1">&laquo; Primero </a>
-          <a href="?page={{ page_obj.previous_page_number}}">Previo</a>
-          {% endif %}
-          <span>
-            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-          </span>
-      {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number}}">siguiente</a>
-      <a href="?page={{ page_obj.paginator.num_pages}}">Último &raquo; </a>
+      {% if page_obj.has_previous %}
+
+      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
       {% endif %}
-    </span>
+
+      <span class="paginacion">
+          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+      </span>
+
+  {% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
+  {% endif %}
+  </span>
 
 {% endblock %}  
