@@ -11,32 +11,47 @@
 	<body class="is-preload landing">
 		<div>
 			<div id="page-wrapper">
+				
+				
 				<header id="header">
-					<h1 id="logo"><a href="{% url 'Home' %}" >RPO TRAINER</a></h1>
+					<h1 id="logo"><a href="{% url 'Home' %}">RPO TRAINER</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a class="inicio-hover" href="index.html">Inicio</a></li>
+							<li><a href="index.html">Inicio</a></li>
 							<li>
 								<a href="#two">Planes</a>
 								<ul>
-									<li><a href="{% url 'lista_cliente' %}"> Cliente</a></li>
-									<li><a href="{% url 'lista_asesorias' %}">Asesorias</a></li>
-									<li><a href="{% url 'lista_nutricion' %}">Nutricion</a></li>
+									<li><a href="{% url 'entrenamiento_main' %}">Entrenamiento</a></li>
+									<li><a href="{% url 'asesorias_main' %}">Asesorias</a></li>
+									<li><a href="{% url 'nutricion_main' %}">Nutricion</a></li>
 									<li>
 									</li>
 								</ul>
 							</li>
+							<li><a href="{% url 'sobre_main' %}">Sobre mi</a></li>
+							<li><a href="{% url 'testimonios_main' %}">Testimonios</a></li>
+							<li><a href="{% url 'contacto_main' %}">Contacto</a></li>
+							
 							<li><a href="{% url 'log-out' %}" class="button primary">Cerrar Sesión</a></li>
+							
+							
 						</ul>
 					</nav>
 				</header>
+
+
+
+
+
+
+
 			</div>
 		</div>
 		<div style="padding: 5%;">
 		</div>
-		<div>
-  		{% block content  %}
-  		{% endblock  %}
+		<div>	
+			{% block content  %}
+			{% endblock  %}
 		<div class="modal" id="popup">
 		</div>
 	</div>
