@@ -1,22 +1,27 @@
 {% load static %}
+<!DOCTYPE HTML>
 <html>
 	<head>
-		<title>RPOTRAINER</title>
+		<title>RPO TRAINER</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}"/></noscript>
 
+
+
+	
 	</head>
-	<body class="is-preload">
+	<body class="is-preload landing">
 		<div id="page-wrapper">
-		
+			<!-- Header -->
+			
+			
 
 			<header id="header">
 				<h1 id="logo"><a href="{% url 'Home' %}">RPO TRAINER</a></h1>
 				<nav id="nav">
 					<ul>
-
 						<li>
 							<a href="#two">Planes</a>
 							<ul>
@@ -27,9 +32,9 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="index.html">Sobre mi</a></li>
-						<li><a href="index.html">Testimonios</a></li>
-						<li><a href="index.html">Contacto</a></li>
+						<li><a href="{% url 'sobre_main' %}">Sobre mi</a></li>
+						<li><a href="{% url 'testimonios_main' %}">Testimonios</a></li>
+						<li><a href="{% url 'contacto_main' %}">Contacto</a></li>
 
 						<li><a href="{% url 'registro_usuario' %}" class="button ">Registrarse</a></li>
 						<li><a href="{% url 'iniciar' %}" class="button primary">Iniciar sesion</a></li>
@@ -38,82 +43,40 @@
 			</header>
 
 
-		
+	<!-- Main -->
 
-
-
-			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
-						<header class="major">
-							<h2>PLAN DE ENTRENAMIENTO</h2>
-							<p>"Nutrición Personalizada: Tu Camino hacia la Salud y el Bienestar"</p>
-						</header>
-
-
-
-				<h2>  Descripción</h2>
-				<p>Este plan integral te ofrece una estructura personalizada para alcanzar tus objetivos de salud a través de la alimentación. La combinación de un plan adaptado, guías para seleccionar alimentos, seguimiento regular y comunicación continua vía WhatsApp te proporcionará las herramientas necesarias para mejorar tu relación con la comida, optimizar tu nutrición y lograr un estilo de vida más saludable.</p><br><br/>
-
-
-										<!-- Table -->
-										<section>
-											<h3>Tarifas</h3>
-											<div class="table-wrapper">
-												<table>
-													<thead>
-														<tr>
-															<th>Duración</th>
-															<th>Precio</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>4 Semanas</td>
-															<td>100.000 COP</td>
-														</tr>
-														<tr>
-															<td>12 Semanas</td>
-															<td>200.000 COP</td>
-														</tr>
-														<tr>
-															<td>24 Semanas</td>
-															<td>400.000 COP</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-
-
-											<br><br/>
-											<br><br/>
+				
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.youtube.com/channel/UC97NkE4ccH87VLQnK60u97Q" class="icon brands alt fa-YouTube"><span class="label">YouTube</span></a></li>
+					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://www.facebook.com/julianrpo.trainerr/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="https://www.instagram.com/julianrpo_trainer/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://www.tiktok.com/@julianrpo_trainer" class="icon brands alt fa-tiktok"><span class="label">tiktok</span></a></li>
+					<li><a href="mailto:samurpo20@correo.com" class="icon solid alt fa-envelope"><span class="label">Gmail</span></a></li>
+					
+				
+
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
 
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
 
 	</body>
 </html>
