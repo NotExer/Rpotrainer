@@ -27,5 +27,5 @@ class clienteform(forms.ModelForm):
             'Edad': forms.NumberInput(attrs={'class': 'form-control'}),
             'Telefono': forms.TextInput(attrs={'class': 'form-control'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'Domicilio': forms.Textarea(attrs={'class': 'form-control'}),
+            'Domicilio': forms.Textarea(attrs={'class': 'form-contrl'}),
         }
