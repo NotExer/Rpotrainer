@@ -1,26 +1,25 @@
 {% extends 'index/index.html' %}
 {% block content %}
 
-<div style="padding-bottom: 2%; align-items: center;" >
-    <center>
-      <h1 class="titulo">Asesorias</h1>
-    </center>
-  </div>
+<div  class="style-title" >
+    <h1 class="titulo">Asesorias</h1>
+</div>
 
-            <table>
+
+            <table class="table table-striped table-dark">
                 <thead>
                 <tr>
-                    <th>Guia Suplemento</th>
-                    <th>Nutricion</th>
-                    <th>Tarifa</th>
-                    <th>Duracion</th>
+                    <th scope="col">Guia Suplemento</th>
+                    <th scope="col">Nutricion</th>
+                    <th scope="col">Tarifa</th>
+                    <th scope="col">Duracion</th>
                     <th>
-                    <a href="{% url 'crear_asesorias' %}"; class="boton_crear">Crear</a>
+                        <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_asesorias' %}')" role="button">Crear</a>
                     </th>  
                 </tr>
                 </thead>
                 <tbody>
-                {% for asesorias in asesorias %}
+                {% for asesorias in object_list %}
                 <tr>
                     <td>{{ asesorias.Guia_Suplemento }}</td>
                     <td>{{ asesorias.Nutricion }}</td>

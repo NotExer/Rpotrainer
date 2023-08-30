@@ -5,24 +5,18 @@
 
 
 <div  class="style-title" >
-
-      <h1 class="titulo">Usuarios</h1>
-
+    <h1 class="titulo">Usuarios</h1>
 </div>
 
-
-
-
-
-<table>
+<table class="table table-striped table-dark">
 <thead>
     <tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>Edad</th>
-    <th>Telefono</th>
-    <th>Email</th>
-    <th>Domicilio</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellidos</th>
+    <th scope="col">Edad</th>
+    <th scope="col">Telefono</th>
+    <th scope="col">Email</th>
+    <th scope="col">Domicilio</th>
 
     <th>
         <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_cliente' %}')" role="button">Crear</a>
@@ -32,12 +26,12 @@
 <tbody>
     {% for cliente in cliente %}
     <tr>
-    <td>{{ cliente.Nombre }}</td>
-    <td>{{ cliente.Apellidos }}</td>
-    <td>{{ cliente.Edad }}</td>
-    <td>{{ cliente.Telefono }}</td>
-    <td>{{ cliente.Email }}</td>
-    <td>{{ cliente.Domicilio }}</td>
+    <td scope="row">{{ cliente.Nombre }}</td>
+    <td scope="row">{{ cliente.Apellidos }}</td>
+    <td scope="row">{{ cliente.Edad }}</td>
+    <td scope="row">{{ cliente.Telefono }}</td>
+    <td scope="row">{{ cliente.Email }}</td>
+    <td scope="row">{{ cliente.Domicilio }}</td>
     <td>
         <a href="{% url 'editar_cliente' pk=cliente.pk %}" class="boton_editar">Editar</a>
         <a href="{% url 'eliminar_cliente' pk=cliente.pk %}" class="boton_eliminar">Eliminar</a>
@@ -46,6 +40,12 @@
     {% endfor %}
 </tbody>
 </table>
+
+
+
+
+
+
 <div>
     <span>
         {% if page_obj.has_previous %}
