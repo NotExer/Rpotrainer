@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-    <h2>Nuevo Asesoria 
+    <h2>Nueva Asesoria
     </h2>
     
     <div class="btn btn-sm btn-icon btn-active-colorprimary" data-bs-dismiss="modal" >
@@ -38,8 +38,8 @@
     <form method='POST' role="form" class="form-inline" action="{% url
     'editar_asesorias' obj.pk %}">
     {%else %}
-    <form method="POST" role="form" class="form-inline" action="{% url
-    'crear_asesorias' %}">
+    <form method="POST" role="form" class="form-inline" action="{% url 'crear_asesorias' %}" >
+        
     {%endif%}
     {% csrf_token %}
     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">

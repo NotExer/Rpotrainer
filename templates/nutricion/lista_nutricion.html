@@ -19,12 +19,12 @@
         <th>Guia Alimentos</th>
         <th>Lista Alimentos</th>
         <th>
-        <a href="{% url 'crear_nutricion' %}" class="boton_crear">Crear</a>
+            <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</a>
         </th>  
     </tr>
 </thead>
 <tbody>
-    {% for nutricion in nutricion %}
+    {% for nutricion in obj %}
     <tr>
     <td>{{ nutricion.Tarifa }}</td>
     <td>{{ nutricion.Duracion }}</td>

@@ -7,13 +7,14 @@ from django.urls import reverse_lazy
 class asesoriasListView(ListView):
     model = asesorias
     template_name = 'asesorias/lista_asesorias.html'
-    context_object_name = 'asesorias'
+    context_object_name = 'obj'
     paginate_by = 5
 
 class asesoriasCreateView(CreateView):
     model = asesorias
     form_class = asesoriasform
     template_name = 'asesorias/crear_asesorias.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_asesorias')
 
 class asesoriasUpdateView(UpdateView):

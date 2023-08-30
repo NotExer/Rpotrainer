@@ -8,13 +8,14 @@ from django.shortcuts import render
 class entrenamientosListView(ListView):
     model = entrenamiento
     template_name = 'entrenamiento/lista_entrenamientos.html'
-    context_object_name = 'entrenamientos'
+    context_object_name = 'obj'
     paginate_by = 5
 
 class entrenamientoCreateView(CreateView):
     model = entrenamiento
     form_class = entrenamientoform
     template_name = 'entrenamiento/crear_entrenamiento.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_entrenamientos')
 
 class entrenamientoUpdateView(UpdateView):

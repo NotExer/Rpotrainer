@@ -28,12 +28,12 @@
         <th>Fracturas</th>
         <th>Tiempo Sueño</th>
         <th>
-          <a href="{% url 'crear_diagnostico' %}" class="boton_crear">Crear</a>
+          <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_diagnostico' %}')" role="button">Crear</a>
         </th>  
       </tr>
     </thead>
     <tbody>
-      {% for diagnostico in object_list %}
+      {% for diagnostico in obj %}
       <tr>
         <td>{{ diagnostico.Objetivo_Fisico }}</td>
         <td>{{ diagnostico.Nivel_entrenamiento_años }}</td>

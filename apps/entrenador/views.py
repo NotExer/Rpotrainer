@@ -7,13 +7,14 @@ from django.urls import reverse_lazy
 class entrenadorListView(ListView):
     model = entrenador
     template_name = 'entrenador/lista_entrenador.html'
-    context_object_name = 'entrenador'
+    context_object_name = 'obj'
     paginate_by = 5
 
 class entrenadorCreateView(CreateView):
     model = entrenador
     form_class = entrenadorform
     template_name = 'entrenador/crear_entrenador.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_entrenador')
 
 class entrenadorUpdateView(UpdateView):

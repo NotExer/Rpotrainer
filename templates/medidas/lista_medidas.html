@@ -26,12 +26,12 @@
         <th>Pantorrilla Derecha Contraida</th>
         <th>Pantorrilla Izquierda Contraida</th>
         <th>
-          <a href="{% url 'crear_medidas' %}" class="boton_crear">Crear</a>
+          <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_medidas' %}')" role="button">Crear</a>
         </th>  
       </tr>
     </thead>
     <tbody>
-      {% for medidas in object_list %}
+      {% for medidas in obj %}
       <tr>
         <td>{{ medidas.id }}</td>
         <td>{{ medidas.Brazo_Izquierdo }}</td>

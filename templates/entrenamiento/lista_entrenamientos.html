@@ -20,12 +20,12 @@
         <th>Modalidad</th>
         <th>Lista De Ejercicios</th>
         <th>
-          <a href="{% url 'crear_entrenamiento' %}" class="boton_crear">Crear</a>
+          <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_entrenamiento' %}')" role="button">Crear</a>
         </th>  
       </tr>
     </thead>
     <tbody>
-      {% for entrenamiento in entrenamientos %}
+      {% for entrenamiento in obj %}
       <tr>
         <td>{{ entrenamiento.Tipo }}</td>
         <td>{{ entrenamiento.Tarifa }}</td>

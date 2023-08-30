@@ -16,6 +16,17 @@
 					<nav id="nav">
 						<ul>
 							<li>
+								<a href="#two">Tablas</a>
+								<ul>
+									<li><a href="{% url 'lista_cliente' %}">Cliente</a></li>
+									<li><a href="{% url 'lista_asesorias' %}">Asesorias</a></li>
+									<li><a href="{% url 'lista_nutricion' %}">Nutricion</a></li>
+									<li><a href="{% url 'lista_entrenamientos' %}">Entrenamientos</a></li>
+									<li><a href="{% url 'lista_diagnostico' %}">Asesorias</a></li>
+									</li>
+								</ul>
+							</li>
+							<li>
 								<a href="#two">Planes</a>
 								<ul>
 									<li><a href="{% url 'entrenamiento_main' %}">Entrenamiento</a></li>
@@ -28,9 +39,7 @@
 							<li><a href="{% url 'sobre_main' %}">Sobre mi</a></li>
 							<li><a href="{% url 'testimonios_main' %}">Testimonios</a></li>
 							<li><a href="{% url 'contacto_main' %}">Contacto</a></li>
-
-							<li><a href="{% url 'registro_usuario' %}" class="button ">Registrarse</a></li>
-							<li><a href="{% url 'iniciar' %}" class="button primary">Iniciar sesion</a></li>
+							<li><a href="{% url 'log-out' %}" class="button primary">Cerrar Sesion</a></li>
 						</ul>
 					</nav>
 				</header>
