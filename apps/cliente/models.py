@@ -1,6 +1,7 @@
 from django.db import models
 
 class cliente(models.Model):
+    
     Nombre = models.CharField(max_length=100)
     Apellidos = models.CharField(max_length=100)
     Edad = models.IntegerField()

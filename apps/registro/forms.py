@@ -15,3 +15,16 @@ class CustomUserForm(UserCreationForm):
             'password1',
             'password2',
         ]
+        labels= {
+            'username':'Nombre',
+            'email':'Correo',
+            'password1':'Contraseña',
+            'password2':'Verificar contraseña',
+        }
+        
+        widgets = {
+            'username': forms.NumberInput(attrs={'class':'form-control'}),
+            'email': forms.NumberInput(attrs={'class':'form-control'}),
+            'password1': forms.TextInput(attrs={'class': 'form-control'}),
+            'password2': forms.TextInput(attrs={'class': 'form-control'}),
+        }    

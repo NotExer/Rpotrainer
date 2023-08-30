@@ -11,13 +11,15 @@ def Home(request):
 class clienteListView(ListView):
     model = cliente
     template_name = 'cliente/lista_cliente.html'
-    context_object_name = 'cliente'
+    context_object_name = 'obj'
     paginate_by = 5
+    
 
 class clienteCreateView(CreateView):
     model = cliente
     form_class = clienteform
     template_name = 'cliente/crear_cliente.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_cliente')
 
 class clienteUpdateView(UpdateView):
