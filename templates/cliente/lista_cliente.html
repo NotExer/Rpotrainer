@@ -12,13 +12,14 @@
 <thead>
     <tr>
     <th scope="col">Id</th>
-    <th scope="col">Nombre</th>
-    <th scope="col">Apellidos</th>
+    <th scope="col">Nombre Completo</th>
+    <th scope="col">Fecha de inicio</th>
+    <th scope="col">Fecha de finalización</th>
+    <th scope="col">Fecha de pago</th>
     <th scope="col">Edad</th>
     <th scope="col">Telefono</th>
     <th scope="col">Email</th>
-    <th scope="col">Domicilio</th>
-
+    <th scope="col">omicilio</th>
     <th>
         <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_cliente' %}')" role="button">Crear</a>
     </th>  
@@ -28,13 +29,17 @@
     {% for cliente in obj %}
     <tr>
     <td scope="row">{{ cliente.id }}</td>
-    <td scope="row">{{ cliente.Nombre }}</td>
-    <td scope="row">{{ cliente.Apellidos }}</td>
+    <td scope="row">{{ cliente.NombreCompleto }}</td>
+    <td scope="row">{{ cliente.FechaInicio }}</td>
+    <td scope="row">{{ cliente.FechaFin  }}</td>
+    <td scope="row">{{ cliente.FechaPago }}</td>
     <td scope="row">{{ cliente.Edad }}</td>
     <td scope="row">{{ cliente.Telefono }}</td>
     <td scope="row">{{ cliente.Email }}</td>
     <td scope="row">{{ cliente.Domicilio }}</td>
     <td>
+        <a href="{% url 'lista_medidas' pk=medidas.pk %}" class="boton_editar">Medidas</a>
+        <a href="{% url 'lista_diagnostico' pk=Diagnostico.pk %}" class="boton_editar">Diagnostico</a>
         <a href="{% url 'editar_cliente' pk=cliente.pk %}" class="boton_editar">Editar</a>
         <a href="{% url 'eliminar_cliente' pk=cliente.pk %}" class="boton_eliminar">Eliminar</a>
     </td>
