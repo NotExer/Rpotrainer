@@ -12,8 +12,6 @@
 </head>
 <body>
 
-
-
 <div class="section">
 	<div class="container">
 		<div class="row full-height justify-content-center">
@@ -24,28 +22,29 @@
 					<label for="reg-log"></label>
 					<div class="card-3d-wrap mx-auto">
 						<div class="card-3d-wrapper">
+
+
+
+
+
+
+
+
+
 							<div class="card-front">
 								<div class="center-wrap">
 									<div class="section text-center">
-
-
-
-
-
-
-
-										<h4 class="mb-4 pb-3">Iniciar sesion</h4>
-										<form class="form-group" method="POST">
-										
-
-											<p> {{ form.as_p }} </p> 
-
-										</form>
-										<a href="{% url 'lista_cliente' %}"  class="btn mt-4">Ingresar</a>
-					<p class="mb-0 mt-4 text-center"><a href="#" class="link">Olvido su contraseña?</a></p>
-									</div>
+									<h4 class="mb-4 pb-3">Iniciar sesion</h4>
+									<form class="form-group" method="POST">
+									{%csrf_token%}
+										{{ form.as_p }}	
+										<input type="submit" value="Ingresar" href="{% url 'lista_cliente' %}"  class="btn mt-4"></input>
+									</form>
+								
+				<p class="mb-0 mt-4 text-center"><a href="#" class="link">Olvido su contraseña?</a></p>
 								</div>
 							</div>
+						</div>
 
 
 

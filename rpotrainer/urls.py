@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from apps.entrenamiento.views import entrenamientosListView, entrenamientoCreateView, entrenamientoUpdateView, entrenamientoDeleteView
 from apps.medidas.views import medidasListView, medidasCreateView, medidasUpdateView, medidasDeleteView
 from apps.nutricion.views import nutricionListView, nutricionCreateView, nutricionUpdateView, nutricionDeleteView
@@ -15,7 +15,7 @@ urlpatterns = [
     re_path(r'^$', Home, name='Home'),
     re_path(r'^entrenamiento$', entrenamiento_main, name='entrenamiento_main'),
     re_path(r'^asesoriasInfo$', asesorias_main, name='asesorias_main'),
-    re_path(r'^nutricion$', nutricion_main, name='nutricion_main'),
+    re_path(r'^nutricionInfo$', nutricion_main, name='nutricion_main'),
     re_path(r'^sobre$', sobre_main, name='sobre_main'),
     re_path(r'^testimonios$', testimonios_main, name='testimonios_main'),
     re_path(r'^contacto$', contacto_main, name='contacto_main'),    
@@ -51,4 +51,5 @@ urlpatterns = [
     path('incia-sesion/', LogInView.as_view(), name='iniciar'),
     path('registro/', registro_usuario, name='registro_usuario'), 
     path('cerrar-sesion/', LogOutView.as_view(), name='log-out'),
+    path('accounts/', include ('django.contrib.auth.urls')),
 ]
