@@ -13,7 +13,7 @@ from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_
 
 urlpatterns = [
     re_path(r'^$', Home, name='Home'),
-    re_path(r'^entrenamiento$', entrenamiento_main, name='entrenamiento_main'),
+    re_path(r'^entrenamientoInfo$', entrenamiento_main, name='entrenamiento_main'),
     re_path(r'^asesoriasInfo$', asesorias_main, name='asesorias_main'),
     re_path(r'^nutricionInfo$', nutricion_main, name='nutricion_main'),
     re_path(r'^sobre$', sobre_main, name='sobre_main'),
