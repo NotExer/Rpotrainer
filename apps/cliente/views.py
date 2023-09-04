@@ -9,7 +9,7 @@ def Home(request):
     return render(request, "index/index")
 
 
-class clienteListView(ListView, LoginRequiredMixin):
+class clienteListView(LoginRequiredMixin, ListView, ):
     model = cliente
     template_name = 'cliente/lista_cliente.html'
     context_object_name = 'obj'

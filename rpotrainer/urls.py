@@ -8,11 +8,12 @@ from apps.diagnostico.views import diagnosticoListView, diagnosticoCreateView, d
 from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView
 from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_usuario
 from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_main, sobre_main, testimonios_main, contacto_main
+from django.contrib.auth.urls import *
 
 
 urlpatterns = [
     re_path(r'^$', Home, name='Home'),
-    re_path(r'^entrenamiento$', entrenamiento_main, name='entrenamiento_main'),
+    re_path(r'^entrenamientoInfo$', entrenamiento_main, name='entrenamiento_main'),
     re_path(r'^asesoriasInfo$', asesorias_main, name='asesorias_main'),
     re_path(r'^nutricionInfo$', nutricion_main, name='nutricion_main'),
     re_path(r'^sobre$', sobre_main, name='sobre_main'),

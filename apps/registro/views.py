@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView, TemplateView
-from apps.registro.models import Perfil
 from apps.registro.forms import CustomUserForm
+
 
 
 
@@ -22,6 +22,7 @@ def registro_usuario(request):
             login(request, user)
             return redirect(to='cliente')
     return render(request, 'session/registro.html', data)
+    
 
 
 

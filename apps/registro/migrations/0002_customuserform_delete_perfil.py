@@ -5,14 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    initial = True
-
     dependencies = [
+        ('registro', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='cliente',
+            name='CustomUserForm',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('NombreCompleto', models.CharField(max_length=100)),
@@ -24,5 +23,8 @@ class Migration(migrations.Migration):
                 ('Email', models.EmailField(max_length=254)),
                 ('Domicilio', models.CharField(max_length=200)),
             ],
+        ),
+        migrations.DeleteModel(
+            name='Perfil',
         ),
     ]
