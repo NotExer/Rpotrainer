@@ -15,9 +15,7 @@
 		<div id="page-wrapper">
 			<!-- Header -->
 			
-		
-
-
+			
 
 			<header id="header">
 				<h1 id="logo"><a href="{% url 'Home' %}">RPO TRAINER</a></h1>
@@ -123,7 +121,7 @@
 							* Disponibilidad 24/7 vía WhatsApp <br>
 							</p>
 						<ul class="actions">
-							<li><a href="{% url 'entrenamiento_main' %}" class="button">Ver mas</a></li>
+							<li><a href="#" class="button">Learn More</a></li>
 						</ul>
 					</div>
 					<a href="#three" class="goto-next scrolly">Next</a>
@@ -136,12 +134,12 @@
 					<span class="image fit main bottom"><img src="{% static 'images/pic04.jpg' %}" alt="" /></span>
 					<div class="content">
 						<header>
-							<h2>Plan de Nutricion</h2>
+							<h2>Interdum felis blandit praesent sed augue</h2>
 							<p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
 						</header>
 						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
 						<ul class="actions">
-							<li><a href="{% url 'nutricion_main' %}" class="button">Learn More</a></li>
+							<li><a href="#" class="button">Learn More</a></li>
 						</ul>
 					</div>
 					<a href="#four" class="goto-next scrolly">Next</a>
@@ -153,12 +151,12 @@
 					<span class="image fit main"><img src="{% static 'images/pic03.jpg' %}" alt="" /></span>
 					<div class="content">
 						<header>
-							<h2>Asesorias Online</h2>
+							<h2>Interdum amet non magna accumsan</h2>
 							<p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
 						</header>
 						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
 						<ul class="actions">
-							<li><a href="{% url 'asesorias_main' %}" class="button">Learn More</a></li>
+							<li><a href="#" class="button">Learn More</a></li>
 						</ul>
 					</div>
 					<a href="#five" class="goto-next scrolly">Next</a>
@@ -226,46 +224,43 @@
 					</div>
 				</section>
 
-
-
-
-	
+			<!-- Six -->
 				<section id="six" class="wrapper style2 special fade">
 					<div class="container">
 						<header>
 							<h2>Envia tus preguntas </h2>
 							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
 						</header>
-					<form method="POST"  >
+					<form method="post" action="#" >
 
-						
+
 
 						<div class="col">
 
-
+							
 							<div class="col">
-								<label for="name" class="form-label">Nombre</label>
-								<input type="text"  id="name" name="name" placeholder="Nombre" aria-label="First name">
+								<label for="exampleFormControlInput1" class="form-label">Nombre</label>
+								<input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
 							</div>
-
-
-
+							
 							<div class="col">
-								<label for="email" class="form-label">Correo Electronico</label>
-								<input type="email" id="email" name="email"  placeholder="Correo" aria-label="Last name">
+								<label for="exampleFormControlInput1" class="form-label">Correo</label>
+								<input type="text" class="form-control" placeholder="Correo" aria-label="Last name">
 							</div>
+							</div>
+							
 
 
-							<div>
 								<div class="mb-3">
-								<label for="subject" class="form-label">Comentarios</label>
-								<textarea id="subject" name="textarea" rows="4"></textarea>
-							</div>
-
-
+								<label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+								<textarea id="exampleFormControlTextarea1" rows="4"></textarea>
+								</div>
 
 							<div style="height:50px"></div>
+
+					
 							<div><input type="submit" value="Enviar" class="fit primary"/></div>
+
 						</div>
 					</form>
 					</div>

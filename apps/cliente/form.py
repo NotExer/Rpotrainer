@@ -28,7 +28,7 @@ class clienteform(forms.ModelForm):
             
         }
         widgets = {
-            'NombreCompleto': forms.TextInput(attrs={'class': 'form-contol'}),
+            'NombreCompleto': forms.TextInput(attrs={'class': 'form-control'}),
             'FechaInicio': forms.DateInput(attrs={'class': 'form-control'}),
             'FechaFin': forms.DateInput(attrs={'class': 'form-control'}),
             'FechaPago': forms.DateInput(attrs={'class': 'form-control'}),

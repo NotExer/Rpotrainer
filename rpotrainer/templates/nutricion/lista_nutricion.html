@@ -1,0 +1,57 @@
+{% extends 'index/index.html' %}
+{% block content %}
+     
+
+
+
+<div style="padding-bottom: 2%; align-items: center;" >
+    <center>
+      <h1 class="titulo">Nutricion</h1>
+    </center>
+  </div>
+
+
+<table >
+<thead>
+    <tr>
+        <th>Tarifa</th>
+        <th>Duracion</th>
+        <th>Guia Alimentos</th>
+        <th>Lista Alimentos</th>
+        <th>
+            <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</a>
+        </th>  
+    </tr>
+</thead>
+<tbody>
+    {% for nutricion in obj %}
+    <tr>
+    <td>{{ nutricion.Tarifa }}</td>
+    <td>{{ nutricion.Duracion }}</td>
+    <td>{{ nutricion.Guia_Alimentos }}</td>
+    <td>{{ nutricion.Lista_Alimentos }}</td>
+    <td>
+        <a href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="boton_editar">Editar</a>
+        <a href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="boton_eliminar">Eliminar</a>
+    </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+
+        <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+        {% endif %}
+
+        <span class="paginacion">
+            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+        </span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
+    {% endif %}
+    </span>
+{% endblock %}  

@@ -1,0 +1,104 @@
+{% extends 'index/index.html' %}
+{% block content %}
+
+<div  class="style-title" >
+    <h1 class="titulo">Asesoria</h1>
+</div>
+
+ <table>
+                <div  class="style-title" >
+                    <h1 class="titulo">Plan de Entrenamiento</h1>
+                </div>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>#</th>
+                    <th>
+                      <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_entrenamiento' %}')" role="button">Crear</a>
+                    </th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for entrenamiento in obj %}
+                  <tr>
+                    <td>{{ entrenamiento.Tipo }}</td>
+                    <td>{{ entrenamiento.Tarifa }}</td>
+                    <td>{{ entrenamiento.Duracion }}</td>
+                    <td>{{ entrenamiento.Modalidad }}</td>
+                    <td>{{ entrenamiento.Lista_Ejercicios }}</td>
+                    <td>
+                      <a href="{% url 'editar_entrenamiento' entrenamiento.id %}" class="boton_editar">Editar</a>
+                      <a href="{% url 'eliminar_entrenamiento' entrenamiento.id %}" class="boton_eliminar">Eliminar</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+              
+            <table class="table table-striped table-dark">
+                <div  class="style-title" >
+                    <h1 class="titulo">Plan De Nutricion</h1>
+                </div>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th>
+                        <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_asesorias' %}')" role="button">Crear</a>
+                    </th>  
+                </tr>
+                </thead>
+                <tbody>
+                {% for asesorias in obj %}
+                <tr>
+                    <td>{{ asesorias.Guia_Suplemento }}</td>
+                    <td>{{ asesorias.Nutricion }}</td>
+                    <td>{{ asesorias.Tarifa }}</td>
+                    <td>{{ asesorias.Duracion }}</td>
+                    <td>
+                    <a href="{% url 'editar_asesorias' pk=asesorias.pk %}" class="boton_editar">Editar</a>
+                    <a href="{% url 'eliminar_asesorias' pk=asesorias.pk %}" class="boton_eliminar">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+
+
+
+           
+
+
+
+
+
+
+
+            <div>
+                <span>
+                    {% if page_obj.has_previous %}
+
+                    <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+                    {% endif %}
+
+                    <span class="paginacion">
+                        Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+                    </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
+                {% endif %}
+                </span>
+
+
+
+{% endblock %}  

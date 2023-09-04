@@ -6,14 +6,13 @@ from apps.nutricion.views import nutricionListView, nutricionCreateView, nutrici
 from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView, entrenadorDeleteView
 from apps.diagnostico.views import diagnosticoListView, diagnosticoCreateView, diagnosticoUpdateView, diagnosticoDeleteView
 from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView
-from apps.asesorias.views import asesoriasListView, asesoriasCreateView, asesoriasUpdateView, asesoriasDeleteView
 from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_usuario
 from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_main, sobre_main, testimonios_main, contacto_main
 
 
 urlpatterns = [
     re_path(r'^$', Home, name='Home'),
-    re_path(r'^entrenamientoInfo$', entrenamiento_main, name='entrenamiento_main'),
+    re_path(r'^entrenamiento$', entrenamiento_main, name='entrenamiento_main'),
     re_path(r'^asesoriasInfo$', asesorias_main, name='asesorias_main'),
     re_path(r'^nutricionInfo$', nutricion_main, name='nutricion_main'),
     re_path(r'^sobre$', sobre_main, name='sobre_main'),
@@ -44,10 +43,6 @@ urlpatterns = [
     path('cliente/crear/', clienteCreateView.as_view(), name='crear_cliente'),
     path('cliente/<int:pk>/editar/', clienteUpdateView.as_view(), name='editar_cliente'),
     path('cliente/<int:pk>/eliminar/', clienteDeleteView.as_view(), name='eliminar_cliente'),
-    path('asesorias/', asesoriasListView.as_view(), name='lista_asesorias'),
-    path('asesorias/crear/', asesoriasCreateView.as_view(), name='crear_asesorias'),
-    path('asesorias/<int:pk>/editar/', asesoriasUpdateView.as_view(), name='editar_asesorias'),
-    path('asesorias/<int:pk>/eliminar/', asesoriasDeleteView.as_view(), name='eliminar_asesorias'),
     path('incia-sesion/', LogInView.as_view(), name='iniciar'),
     path('registro/', registro_usuario, name='registro_usuario'), 
     path('cerrar-sesion/', LogOutView.as_view(), name='log-out'),

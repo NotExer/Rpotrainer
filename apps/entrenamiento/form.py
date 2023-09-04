@@ -5,34 +5,23 @@ class entrenamientoform(forms.ModelForm):
     class Meta:
         model=entrenamiento     
         fields = [
-            'Musculo',
-            'NombreEjercicio',
-            'Repeticiones',
-            'Series',
-            'Rir',
-            'MicroPausa',
-            'MacroPausa',
-            'Descripcion',
+            'Tipo',
+            'Lista_Ejercicios',
+            'Tarifa',
+            'Modalidad',
+            'Duracion',
         ]
         labels= {
-            'Musculo':'Musculo',
-            'NombreEjercicio':'Nombre De Ejercicio',
-            'Repeticiones':'Repeticiones',
-            'Rir':'Rir',
-            'MicroPausa':'MicroPausa',
-            'MacroPausa':'MacroPausa',
-            'Descripcion':'Descripcion',
+            'Tipo':'Tipo',
+            'Lista_Ejercicios':'Lista Ejercicios',
+            'Tarifa':'Tarifa',
+            'Modalidad':'Modalidad',
+            'Duracion':'Duración',
         }
         widgets={
-            
-            
-            'Musculo' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'NombreEjercicio' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'Repeticiones' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'Series' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'Rir' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'MicroPausa' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'MacroPausa' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'Descripcion' : forms.TextInput(attrs={'class' : 'form-control'}),
-            
+            'Tipo': forms.TextInput(attrs={'class':'form-control'}),
+            'Lista_Ejercicios': forms.TextInput(attrs={'class':'form-control'}),
+            'Tarifa': forms.NumberInput(attrs={'class':'form-control'}),
+            'Modalidad': forms.TextInput(attrs={'class':'form-control'}),
+            'Duracion': forms.TextInput(attrs={'class':'form-control'}),
         }

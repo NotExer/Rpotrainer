@@ -1,0 +1,74 @@
+{% extends 'index/index.html' %}
+{% block content %}
+              
+
+
+<div  class="style-title" >
+  <h1 class="titulo">Entrenamiento</h1>
+</div>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Musculo</th>
+        <th>Ejercicio</th>
+        <th>Repeticiones</th>
+        <th>Series</th>
+        <th>Rir</th>
+        <th>Micro pausa</th>
+        <th>Macro pausa</th>
+        <th>Descripcion</th>
+        <th>
+          <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_entrenamiento' %}')" role="button">Crear</a>
+        </th>  
+      </tr>
+    </thead>
+    <tbody>
+      {% for entrenamiento in obj %}
+      <tr>
+        <td>{{ entrenamiento.Musculo }}</td>
+        <td>{{ entrenamiento.NombreEjercicio }}</td>
+        <td>{{ entrenamiento.Repeticiones }}</td>
+        <td>{{ entrenamiento.Series }}</td>
+        <td>{{ entrenamiento.Rir }}</td>
+        <td>{{ entrenamiento.MicroPausa }}</td>
+        <td>{{ entrenamiento.MacroPausa }}</td>
+        <td>{{ entrenamiento.Descripcion }}</td>
+        <td>
+
+
+
+          <a href="{% url 'editar_entrenamiento' entrenamiento.id %}" class="boton_editar">Editar</a>
+          <a href="{% url 'eliminar_entrenamiento' entrenamiento.id %}" class="boton_eliminar">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+  
+  </div>
+  <div>
+    <span>
+      {% if page_obj.has_previous %}
+
+      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+      {% endif %}
+
+      <span class="paginacion">
+          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+      </span>
+
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+</div>  
+
+{% endblock %}  
