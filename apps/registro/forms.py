@@ -3,8 +3,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 
-
-
     
 class CustomUserForm(UserCreationForm):
     class Meta:
@@ -28,3 +26,9 @@ class CustomUserForm(UserCreationForm):
             'password1': forms.PasswordInput(attrs={'class': 'form-style'}),
             'password2': forms.PasswordInput(attrs={'class': 'form-style'}),
         } 
+        help_texts = {
+        'username': None,
+        'email' : None,
+    }
+        
+        

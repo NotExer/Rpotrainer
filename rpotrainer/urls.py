@@ -19,6 +19,7 @@ urlpatterns = [
     re_path(r'^sobre$', sobre_main, name='sobre_main'),
     re_path(r'^testimonios$', testimonios_main, name='testimonios_main'),
     re_path(r'^contacto$', contacto_main, name='contacto_main'),    
+    path('iniciar/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('entrenamientos/', entrenamientosListView.as_view(), name='lista_entrenamientos'),
     path('entrenamientos/crear/', entrenamientoCreateView.as_view(), name='crear_entrenamiento'),

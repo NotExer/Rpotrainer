@@ -24,13 +24,6 @@
 						<div class="card-3d-wrapper">
 
 
-
-
-
-
-
-
-
 							<div class="card-front">
 								<div class="center-wrap">
 									<div class="section text-center">
@@ -38,9 +31,9 @@
 
 
 
-									<form class="form-group" method="POST">
+									<form class="form-group" method="POST" action="" >
 										{%csrf_token%}
-										{{ form }}	
+										{{ form.as_div }}
 										
 										<input type="submit" value="Ingresar" href="{% url 'lista_cliente' %}"  class="btn mt-4"></input>
 									</form>
@@ -69,7 +62,7 @@
 									
 										{% csrf_token %}
 
-										<p> {{ form.as_p }} </p> 
+										<p> {{ form.as_div }} </p> 
 
 
 										<a href="#" class="btn mt-4">Registrarse</a>
