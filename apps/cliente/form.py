@@ -17,7 +17,7 @@ class clienteform(forms.ModelForm):
 
         ]
         labels= {
-            'NombreComleto':'Nombre Completo',
+            'NombreCompleto':'Nombre Completo',
             'FechaInicio':'Fecha de inicio',
             'Fecha Fin':'Fecha de finalización',
             'FechaPago':'Fecha de pago',

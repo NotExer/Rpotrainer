@@ -17,7 +17,7 @@ class entrenadorform(forms.ModelForm):
             'nombre': 'nombre',
             'apellido': 'apellido',
             'correo': 'correo',
-            'numero_contacto': 'numero contacto',
+            'numero_contacto': 'numero de contacto',
         }
         
         widgets = {

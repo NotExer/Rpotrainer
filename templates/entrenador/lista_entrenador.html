@@ -9,7 +9,7 @@
 
 
 
-<table class="table table-bordered">
+<table class="table table-striped table-dark">
     <thead>
         <tr>
           <th>Nombre</th>
@@ -17,7 +17,7 @@
           <th>Correo</th>
           <th>Numero Contacto</th>
           <th>
-            <a href="{% url 'crear_entrenador' %}" class="boton_crear">Crear</a>
+            <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_entrenador' %}')" role="button">Crear</a>
           </th>  
       </tr>
     </thead>
