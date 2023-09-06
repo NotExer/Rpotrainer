@@ -11,7 +11,7 @@
 
 
 
-<table class="alt" >
+<table class="table table-striped table-dark alt" >
     <thead>
       <tr>
         <th>Objetivo Fisico</th>
@@ -35,19 +35,19 @@
     <tbody>
       {% for diagnostico in obj %}
       <tr>
-        <td>{{ diagnostico.Objetivo_Fisico }}</td>
-        <td>{{ diagnostico.Nivel_entrenamiento_años }}</td>
-        <td>{{ diagnostico.Frecuencia_semanal }}</td>
-        <td>{{ diagnostico.Dias_de_entrenamiento }}</td>
-        <td>{{ diagnostico.Tiempo_Por_Sesion }}</td>
-        <td>{{ diagnostico.Material_Entreno }}</td>
-        <td>{{ diagnostico.Fuma }}</td>
-        <td>{{ diagnostico.Consume_alcohol }}</td>
-        <td>{{ diagnostico.Cirugias_anteriores }}</td>
-        <td>{{ diagnostico.Entrenos_anteriores }}</td>
-        <td>{{ diagnostico.Enfermedad_de_base }}</td>
-        <td>{{ diagnostico.Fracturas }}</td>
-        <td>{{ diagnostico.Tiempo_sueño }}</td>
+        <td data-title="Objetivo fisico" scope="row">{{ diagnostico.Objetivo_Fisico }}</td>
+        <td data-title="nivel de entrenamiento" scope="row">{{ diagnostico.Nivel_entrenamiento_años }}</td>
+        <td data-title="frecuencia semanal" scope="row">{{ diagnostico.Frecuencia_semanal }}</td>
+        <td data-title="dias de entrenamiento" scope="row">{{ diagnostico.Dias_de_entrenamiento }}</td>
+        <td data-title="tiempo por session" scope="row">{{ diagnostico.Tiempo_Por_Sesion }}</td>
+        <td data-title="material de entreno" scope="row">{{ diagnostico.Material_Entreno }}</td>
+        <td data-title="fuma" scope="row">{{ diagnostico.Fuma }}</td>
+        <td data-title="consume alcohol" scope="row">{{ diagnostico.Consume_alcohol }}</td>
+        <td data-title="Cirugias anteriores" scope="row">{{ diagnostico.Cirugias_anteriores }}</td>
+        <td data-title="entrenos anteriores" scope="row">{{ diagnostico.Entrenos_anteriores }}</td>
+        <td data-title="enfermedades " scope="row">{{ diagnostico.Enfermedad_de_base }}</td>
+        <td data-title="fracturas" scope="row">{{ diagnostico.Fracturas }}</td>
+        <td data-title="tiepo de sueño" scope="row">{{ diagnostico.Tiempo_sueño }}</td>
         <td>
           <a href="{% url 'editar_diagnostico' pk=diagnostico.pk %}" class="boton_editar">Editar</a>
           <a href="{% url 'eliminar_diagnostico' pk=diagnostico.pk %}" class="boton_eliminar">Eliminar</a>

@@ -662,6 +662,8 @@ body.landing {
 		width: 100%;
 	}
 
+
+
 	@media screen and (max-width: 1280px) {
 
 		.container {
@@ -686,6 +688,7 @@ body.landing {
 	flex-wrap: wrap;
 	box-sizing: border-box;
 	align-items: stretch;
+
 }
 
 	.row > * {
@@ -4197,3 +4200,32 @@ body.is-touch #banner {
 	textarea {
 		resize: none;
 	}
+
+	@media (max-width: 1200px){
+		.table{
+			width: 100%;
+		}
+		.table tr{
+			display: flex;
+			flex-direction: column;
+			border: 1px solid white;
+			padding: 1em;
+			margin-bottom: 1em;
+		}
+		.table thead{
+			display: none;
+		}
+		.table td[data-title]{
+			display: flex;
+		}
+
+		.table td[data-title]::before{
+			content: attr(data-title);
+			width: 140px;
+
+		}
+	}
+
+.campo{
+	margin:50px 0px;
+}

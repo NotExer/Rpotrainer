@@ -80,7 +80,6 @@
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="https://www.youtube.com/channel/UC97NkE4ccH87VLQnK60u97Q" class="icon brands alt fa-YouTube"><span class="label">YouTube</span></a></li>
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://www.facebook.com/julianrpo.trainerr/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
 						<li><a href="https://www.instagram.com/julianrpo_trainer/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="https://www.tiktok.com/@julianrpo_trainer" class="icon brands alt fa-tiktok"><span class="label">tiktok</span></a></li>
@@ -124,6 +123,18 @@
 					return false;
 				}
 			</script>
+
+			<script>
+				$( function() {
+				$( "#datepicker" ).datepicker();
+				$( "#anim" ).on( "change", function() {
+					$( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+				});
+				} );
+				</script>
 			{% endblock %}
+
+
+
 	</body>
 </html>
