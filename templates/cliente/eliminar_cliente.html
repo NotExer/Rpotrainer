@@ -31,17 +31,13 @@
 									<div class="stepper-item current" data-kt-stepper-element="nav">
 										<!--begin::Line-->
 										<div class="stepper-line w-40px"></div>
-        <form method='post' role="form" class="form-inline" action="{% url 'eliminar_entrenamiento' obj.entrenamiento.id obj.pk %}" >
+        <form method='post' role="form" class="form-inline" action="{% url 'eliminar_cliente' obj.pk %}" >
             {% csrf_token %}
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                Eliminar {{ obj.entrenamiento}}<b></b>
-            </div>
         
             <button class="boton_eliminar"  type="submit" class="btn btn-danger" ;>
-                <i class="far fa-save"></i>
                 Si, eliminar</button>
 
-                <button type="button" class="btn btn-success"  onclick="return cerrar_modal()";>
+                <button type="button" class="boton_crear"  onclick="return cerrar_modal()";>
                     Cancelar
                 </button>
         </form>

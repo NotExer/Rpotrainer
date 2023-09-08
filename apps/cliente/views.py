@@ -38,5 +38,6 @@ class clienteDeleteView(DeleteView):
     context_object_name = 'obj'
     
     
+    
 
 

@@ -29,8 +29,8 @@ class entrenamientoform(forms.ModelForm):
             'imagen':'Imagen'
         }
         widgets={
-            'musculo': forms.NumberInput(attrs={'class':'form-control'}),
-            'ejercicio': forms.NumberInput(attrs={'class':'form-control'}),
+            'musculo': forms.TextInput(attrs={'class':'form-control'}),
+            'ejercicio': forms.TextInput(attrs={'class':'form-control'}),
             'series': forms.NumberInput(attrs={'class':'form-control'}),
             'repeticiones': forms.NumberInput(attrs={'class':'form-control'}),
             'rir': forms.NumberInput(attrs={'class':'form-control'}),
@@ -38,5 +38,5 @@ class entrenamientoform(forms.ModelForm):
             'microPausa': forms.NumberInput(attrs={'class':'form-control'}),
             'macroPausa': forms.NumberInput(attrs={'class':'form-control'}),
             'descripción': forms.TextInput(attrs={'class':'form-control'}),
-            'imagen': forms.NumberInput(attrs={'class':'form-control'}),
+            'imagen': forms.ImageField(),
         }

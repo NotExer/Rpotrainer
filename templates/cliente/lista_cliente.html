@@ -35,8 +35,9 @@
     <td data-title="Email" scope="row">{{ cliente.Email }}</td>
     <td data-title="Domicilio" scope="row">{{ cliente.Domicilio }}</td>
     <td>
-        <a href="{% url 'editar_cliente' pk=cliente.pk %}" class="boton_editar">Editar</a>
-        <a href="{% url 'eliminar_cliente' pk=cliente.pk %}" class="boton_eliminar">Eliminar</a>
+        <a href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_cliente' cliente.id %}')" role="button"><i class="fa fa-edit"></i></a>
+        <a class="btn btn-danger btn-circle" role="button"><i class="fa fa-toggle-off"></i></a>
+
     </td>
     </tr>
     {% endfor %}
@@ -70,13 +71,3 @@
 
 {% endblock %}  
 
-{% block js_page %}
-<script>
-    $(document).ready(function(){
-        $('.table').DataTable();
-    });
-</script>
-{% endblock %}  
-
-    
-    
