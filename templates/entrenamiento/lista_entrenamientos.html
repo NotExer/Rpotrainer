@@ -11,12 +11,16 @@
 
   <table>
     <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Tarifa</th>
-        <th>Duracion</th>
-        <th>Modalidad</th>
-        <th>Lista De Ejercicios</th>
+      <tr class="campo">
+        <th>Musculo</th>
+        <th>Ejericio</th>
+        <th>Series</th>
+        <th>Repeticiones</th>
+        <th>Rir</th>
+        <th>Cadencia</th>
+        <th>Micro Pausa</th>
+        <th>Macro Pausa</th>
+        <th>Imagen</th>
         <th>
           <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_entrenamiento' %}')" role="button">Crear</a>
         </th>  
@@ -25,12 +29,18 @@
     <tbody>
       {% for entrenamiento in obj %}
       <tr>
-        <td>{{ entrenamiento.Tipo }}</td>
-        <td>{{ entrenamiento.Tarifa }}</td>
-        <td>{{ entrenamiento.Duracion }}</td>
-        <td>{{ entrenamiento.Modalidad }}</td>
-        <td>{{ entrenamiento.Lista_Ejercicios }}</td>
-        <td>
+        <td data-title="Musculo">{{ entrenamiento.musculo }}</td>
+        <td data-title="Ejercicio">{{ entrenamiento.ejercicio }}</td>
+        <td data-title="Series">{{ entrenamiento.series }}</td>
+        <td data-title="Repeticiones">{{ entrenamiento.repeticiones }}</td>
+        <td data-title="Rir">{{ entrenamiento.rir }}</td>
+        <td data-title="Cadencia">{{ entrenamiento.cadencia }}</td>
+        <td data-title="Micro Pausa">{{ entrenamiento.microPausa }}</td>
+        <td data-title="Macro Pausa">{{ entrenamiento.macroPausa }}</td>
+        <td data-title="Descripcion">{{ entrenamiento.descripcion }}</td>
+        <td data-title="Imagen">{{ entrenamiento.imagen }}</td>
+
+
           <a href="{% url 'editar_entrenamiento' entrenamiento.id %}" class="boton_editar">Editar</a>
           <a href="{% url 'eliminar_entrenamiento' entrenamiento.id %}" class="boton_eliminar">Eliminar</a>
         </td>

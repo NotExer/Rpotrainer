@@ -3,7 +3,7 @@
         <!--begin::Modal header-->
 					<div class="modal-header">
 						<!--begin::Modal title-->
-						<h2>Eliminar Cliente</h2>
+						<h2>Eliminar Entrenamiento</h2>
 						<!--end::Modal title-->
 						<!--begin::Close-->
 						<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -31,13 +31,13 @@
 									<div class="stepper-item current" data-kt-stepper-element="nav">
 										<!--begin::Line-->
 										<div class="stepper-line w-40px"></div>
-        <form method='post' role="form" class="form-inline" action="{% url 'cliente:eliminar_cliente' obj.cliente.id obj.pk %}" >
+        <form method='post' role="form" class="form-inline" action="{% url 'eliminar_entrenamiento' obj.entrenamiento.id obj.pk %}" >
             {% csrf_token %}
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                Eliminar {{ obj.cliente}} de cliente número {{ obj.cliente.id}}<b></b>
+                Eliminar {{ obj.entrenamiento}}<b></b>
             </div>
         
-            <button class="btn btn-danger"  type="submit" class="boton_eliminar" ;>
+            <button class="boton_eliminar"  type="submit" class="btn btn-danger" ;>
                 <i class="far fa-save"></i>
                 Si, eliminar</button>
 

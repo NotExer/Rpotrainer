@@ -5,23 +5,38 @@ class entrenamientoform(forms.ModelForm):
     class Meta:
         model=entrenamiento     
         fields = [
-            'Tipo',
-            'Lista_Ejercicios',
-            'Tarifa',
-            'Modalidad',
-            'Duracion',
+            'musculo',
+            'ejercicio',
+            'series',
+            'repeticiones',
+            'rir',
+            'cadencia',
+            'microPausa',
+            'macroPausa',
+            'descripcion',
+            'imagen',
         ]
         labels= {
-            'Tipo':'Tipo',
-            'Lista_Ejercicios':'Lista Ejercicios',
-            'Tarifa':'Tarifa',
-            'Modalidad':'Modalidad',
-            'Duracion':'Duración',
+            'musculo':'Musculo',
+            'ejercicio':'Ejercicio',
+            'series':'Series',
+            'repeticiones':'Repeticiones',
+            'rir':'Rir',
+            'cadencia':'cadencia',
+            'microPausa':'Micro Pausa',
+            'macroPausa':'Macro Pausa',
+            'descripcion': 'Descripción',
+            'imagen':'Imagen'
         }
         widgets={
-            'Tipo': forms.TextInput(attrs={'class':'form-control'}),
-            'Lista_Ejercicios': forms.TextInput(attrs={'class':'form-control'}),
-            'Tarifa': forms.NumberInput(attrs={'class':'form-control'}),
-            'Modalidad': forms.TextInput(attrs={'class':'form-control'}),
-            'Duracion': forms.TextInput(attrs={'class':'form-control'}),
+            'musculo': forms.NumberInput(attrs={'class':'form-control'}),
+            'ejercicio': forms.NumberInput(attrs={'class':'form-control'}),
+            'series': forms.NumberInput(attrs={'class':'form-control'}),
+            'repeticiones': forms.NumberInput(attrs={'class':'form-control'}),
+            'rir': forms.NumberInput(attrs={'class':'form-control'}),
+            'cadencia': forms.NumberInput(attrs={'class':'form-control'}),
+            'microPausa': forms.NumberInput(attrs={'class':'form-control'}),
+            'macroPausa': forms.NumberInput(attrs={'class':'form-control'}),
+            'descripción': forms.TextInput(attrs={'class':'form-control'}),
+            'imagen': forms.NumberInput(attrs={'class':'form-control'}),
         }

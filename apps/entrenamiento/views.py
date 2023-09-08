@@ -22,9 +22,12 @@ class entrenamientoUpdateView(UpdateView):
     model = entrenamiento
     form_class = entrenamientoform
     template_name = 'entrenamiento/editar_entrenamiento.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_entrenamientos')
+    
 
 class entrenamientoDeleteView(DeleteView):
     model = entrenamiento
     template_name = 'entrenamiento/eliminar_entrenamiento.html'
+    context_object_name = 'obj'
     success_url = reverse_lazy('lista_entrenamientos')
