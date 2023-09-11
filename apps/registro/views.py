@@ -17,11 +17,11 @@ def registro_usuario(request):
         formulario = CustomUserForm(request.POST)
         if formulario.is_valid(): 
             formulario.save()
-            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            user = authenticate(username=formulario.cleaned_data["username"], 
+                                password=formulario.cleaned_data["password1"])
             login(request, user)
             return redirect(to='lista_cliente')
     return render(request, 'session/registro.html', data)
-
 
 
 

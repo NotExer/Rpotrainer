@@ -22,9 +22,9 @@ class CustomUserForm(UserCreationForm):
         
         widgets = {
             'username': forms.TextInput(attrs={'class':'form-style'}),
-            'email': forms.EmailInput(attrs={'class':'form-style'}),
-            'password1': forms.PasswordInput(attrs={'class': 'form-style'}),
-            'password2': forms.PasswordInput(attrs={'class': 'form-style'}),
+            'email': forms.EmailInput(attrs={'class':'form-style'}),           
+            'password1': forms.PasswordInput(attrs={'class':'form-style'}),
+            'password2': forms.PasswordInput(attrs={'class':'form-style'}),
         } 
         help_texts = {
         'username': None,

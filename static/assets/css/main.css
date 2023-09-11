@@ -4139,43 +4139,74 @@ body.is-touch #banner {
 	.titulo{
 	text-decoration: none;
 	font-size: 40px;
-	padding: 20px;
 	
 	}
 	.style-title{
-		padding-bottom: 2%; 
+		padding-bottom: 1%; 
 		align-items: center;
 		display: flex;
 		justify-content: center;
 
 	}
-	.boton_eliminar{
-	padding: 10px;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	background-color: #ff0000;
-	border: none;
-	border-radius: 10px;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	text-decoration: none;
-	color: #000000;
-	}
-	
-	.boton_eliminar:hover {
-	box-shadow: 0px 15px 20px rgba(255, 75, 75, 0.4);
-	color: #000000;
-
-	}
-
+	.button_eliminar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: rgb(20, 20, 20);
+		border: none;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+		cursor: pointer;
+		transition-duration: .3s;
+		overflow: hidden;
+		position: relative;
+	  }
+	  
+	  .svgIcon {
+		width: 12px;
+		transition-duration: .3s;
+	  }
+	  
+	  .svgIcon path {
+		fill: white;
+	  }
+	  
+	  .button_eliminar:hover {
+		width: 140px;
+		border-radius: 50px;
+		transition-duration: .3s;
+		background-color: rgb(255, 69, 69);
+		align-items: center;
+	  }
+	  
+	  .button_eliminar:hover .svgIcon {
+		width: 50px;
+		transition-duration: .3s;
+		transform: translateY(60%);
+	  }
+	  
+	  .button_eliminar::before {
+		position: absolute;
+		top: -20px;
+		content: "Delete";
+		color: white;
+		transition-duration: .3s;
+		font-size: 2px;
+	  }
+	  
+	  .button_eliminar:hover::before {
+		font-size: 13px;
+		opacity: 1;
+		transform: translateY(30px);
+		transition-duration: .3s;
+	  }
 
 
 	.boton_editar{
-	padding: 1.2em 3em;
+	padding: 10px;
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
@@ -4228,4 +4259,12 @@ body.is-touch #banner {
 
 .campo{
 	margin:50px 0px;
+}
+
+.pad{
+	margin: 20px;
+}
+
+.nav-pad{
+	padding: 3%;
 }

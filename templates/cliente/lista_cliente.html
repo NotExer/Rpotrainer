@@ -7,9 +7,12 @@
 <div  class="style-title" >
     <h1 class="titulo">Usuarios</h1>
 </div>
-<a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_cliente' %}')" role="button">Crear</a>
+<div  class="style-title" >
+<button href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_cliente' %}')" role="button">Crear</button>
+</div>
+<div class="pad">
 <table class="table table-striped table-dark alt">
-<thead>
+<thead >
     <tr class="campo">
     <th scope="col">Id</th>
     <th scope="col">Nombre Completo</th>
@@ -19,7 +22,7 @@
     <th scope="col">Edad</th>
     <th scope="col">Telefono</th>
     <th scope="col">Email</th>
-    <th scope="col">Domicilio</th>
+    <th scope="col">Dirección</th>
     <th></th>
     </tr>
 </thead>
@@ -28,23 +31,23 @@
     <tr class="campo">
     <td data-title="Id:" scope="row">{{ cliente.id }}</td>
     <td data-title="Nombre:" scope="row">{{ cliente.NombreCompleto }}</td>
-    <td data-title="FechaInicio:" scope="row">{{ cliente.FechaInicio }}</td>
-    <td data-title="FechaFin:" scope="row">{{ cliente.FechaFin  }}</td>
+    <td data-title="FechaInicio:" scope="row">{{ cliente.FechaInicio}}</td>
+    <td data-title="FechaFin:" scope="row">{{ cliente.FechaFin }}</td>
     <td data-title="FechaPago:" scope="row">{{ cliente.FechaPago }}</td>
     <td data-title="Edad:" scope="row">{{ cliente.Edad }}</td>
     <td data-title="Telefono:" scope="row">{{ cliente.Telefono }}</td>
     <td data-title="Email:" scope="row">{{ cliente.Email }}</td>
-    <td data-title="Domicilio:" scope="row">{{ cliente.Domicilio }}</td>
+    <td data-title="Dirección:" scope="row">{{ cliente.Domicilio }}</td>
     <td>
-        <a href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_cliente' cliente.id %}')" role="button"><i class="fa fa-edit"></i></a>
-        <a class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></a>
+        <button href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_cliente' cliente.id %}')" role="button"><i class="fa fa-edit"></i></button>
+        <button class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></button>
 
     </td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
-
+</div>
 
 <div class="tabla-mobile">
 <div class="fila">
@@ -72,3 +75,12 @@
 
 {% endblock %}  
 
+
+
+{%block scripts_local%}
+<script>
+    $(document).ready(function (){
+        jQuery.datetimepicker.setlocale('es')
+    });
+</script>
+{% endblock scripts_local%}

@@ -38,5 +38,5 @@ class entrenamientoform(forms.ModelForm):
             'microPausa': forms.NumberInput(attrs={'class':'form-control'}),
             'macroPausa': forms.NumberInput(attrs={'class':'form-control'}),
             'descripción': forms.TextInput(attrs={'class':'form-control'}),
-            'imagen': forms.TextInput(attrs={'class':'form-control'}),
+            'imagen': forms.ClearableFileInput()
         }

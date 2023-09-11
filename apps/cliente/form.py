@@ -29,11 +29,11 @@ class clienteform(forms.ModelForm):
         }
         widgets = {
             'NombreCompleto': forms.TextInput(attrs={'class': 'form-control'}),
-            'FechaInicio': forms.DateInput(attrs={'class': 'form-control'}),
-            'FechaFin': forms.DateInput(attrs={'class': 'form-control'}),
-            'FechaPago': forms.DateInput(attrs={'class': 'form-control'}),
+            'FechaInicio': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'FechaFin': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'FechaPago': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'Edad': forms.NumberInput(attrs={'class': 'form-control'}),
-            'Telefono': forms.TextInput(attrs={'class': 'form-control'}),
+            'Telefono': forms.NumberInput(attrs={'class': 'form-control'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control'}),
             'Domicilio': forms.Textarea(attrs={'class': 'form-contrl'}),
             

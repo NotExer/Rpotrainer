@@ -10,4 +10,4 @@ class entrenamiento(models.Model):
             microPausa = models.FloatField(max_length=25)
             macroPausa = models.FloatField(max_length=25)
             descripcion = models.TextField(max_length=25)
-            imagen = models.TextField(max_length=25)
+            imagen = models.FileField()
