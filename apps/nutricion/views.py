@@ -22,8 +22,10 @@ class nutricionUpdateView(UpdateView):
     form_class = nutricionform
     template_name = 'nutricion/editar_nutricion.html'
     success_url = reverse_lazy('lista_nutricion')
+    context_object_name = 'obj'
 
 class nutricionDeleteView(DeleteView):
     model = nutricion
     template_name = 'nutricion/eliminar_nutricion.html'
     success_url = reverse_lazy('lista_nutricion')
+    context_object_name = 'obj'

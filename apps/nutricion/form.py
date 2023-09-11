@@ -5,20 +5,43 @@ class nutricionform(forms.ModelForm):
     class Meta:
         model=nutricion     
         fields = [
-            'Tarifa',
-            'Duracion',
-            'Guia_Alimentos',
-            'Lista_Alimentos',
+            'dia',
+            'hora',
+            'tipo_comida',
+            'alimento',
+            'porcion',
+            'evitar',
+            'otras_recomendaciones',
+            'ingesta_agua',
+            'dia_trampa',
+            'suplementos',
+            'lista_compra',
+            
         ]
         labels= {
-            'Tarifa':'Tarifa',
-            'Duracion':'Duracion',
-            'Guia_Alimentos':'Guia Alimentos',
-            'Lista_Alimentos':'Lista Alimentos',
+            'dia':'Dia',
+            'hora':'Hora',
+            'tipo_comida':'Tipo De Comida',
+            'alimento':'Alimento',
+            'porcion':'Porcion',
+            'evitar':'Alimentos a evitar',
+            'otras_recomendaciones' : 'Otras Recomendaciones',
+            'ingesta_agua':'Ingesta de agua',
+            'dia_trampa' : 'Dia Trampa',
+            'suplementos' : 'Guia Suplementos',
+            'lista_compra' : 'Lista de compra'
         }
         widgets = {
-            'Tarifa': forms.NumberInput(attrs={'class':'form-control'}),
-            'Duracion': forms.NumberInput(attrs={'class':'form-control'}),
-            'Guia_Alimentos': forms.TextInput(attrs={'class': 'form-control'}),
-            'Lista_Alimentos': forms.TextInput(attrs={'class': 'form-control'}),
+            'dia': forms.TextInput(attrs={'class':'form-control'}),
+            'hora': forms.TextInput(attrs={'class':'form-control'}),
+            'tipo_comida': forms.TextInput(attrs={'class': 'form-control'}),
+            'alimento': forms.TextInput(attrs={'class': 'form-control'}),
+            'porcion': forms.TextInput(attrs={'class': 'form-control'}),
+            'evitar': forms.TextInput(attrs={'class': 'form-control'}),
+            'otras_recomendaiones': forms.TextInput(attrs={'class': 'form-control'}),
+            'ingesta_agua': forms.TextInput(attrs={'class': 'form-control'}),
+            'dia_trampa': forms.TextInput(attrs={'class': 'form-control'}),
+            'suplementos': forms.TextInput(attrs={'class': 'form-control'}),
+            'lista_compra': forms.TextInput(attrs={'class': 'form-control'}),
         }
+        

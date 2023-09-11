@@ -16,14 +16,17 @@ class medidasCreateView(CreateView):
     template_name = 'medidas/crear_medidas.html'
     context_object_name = 'obj'
     success_url = reverse_lazy('lista_medidas')
+        
 
 class medidasUpdateView(UpdateView):
     model = medidas
     form_class = medidasform
     template_name = 'medidas/editar_medidas.html'
     success_url = reverse_lazy('lista_medidas')
+    context_object_name = 'obj'
 
 class medidasDeleteView(DeleteView):
     model = medidas
     template_name = 'medidas/eliminar_medidas.html'
     success_url = reverse_lazy('lista_medidas')
+    context_object_name = 'obj'

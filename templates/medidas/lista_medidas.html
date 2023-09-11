@@ -45,8 +45,8 @@
         <td>{{ medidas.Pantorrilla_Derecha_Contraida }}</td>
         <td>{{ medidas.Pantorrilla_Izquierda_Contraida }}</td>
         <td>
-          <a href="{% url 'editar_medidas' medidas.id %}" class="boton_editar">Editar</a>
-          <a href="{% url 'eliminar_medidas' medidas.id %}" class="boton_eliminar">Eliminar</a>
+          <a href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_medidas' medidas.id %}')" role="button"><i class="fa fa-edit"></i></a>
+          <a href="#" onclick="return abrir_modal('{% url 'eliminar_medidas' medidas.id %}')" class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></a>
         </td>
       </tr>
       {% endfor %}

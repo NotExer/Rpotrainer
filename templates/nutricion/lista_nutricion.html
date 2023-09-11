@@ -14,10 +14,17 @@
 <table >
 <thead>
     <tr>
-        <th>Tarifa</th>
-        <th>Duracion</th>
-        <th>Guia Alimentos</th>
-        <th>Lista Alimentos</th>
+        <th>Dia</th>
+        <th>Hora</th>
+        <th>Tipo de comida</th>
+        <th>Alimento</th>
+        <th>Porcion</th>
+        <th>Alimentos a evitar</th>
+        <th>Otras recomendaciones</th>
+        <th>Ingesta de agua</th>
+        <th>Dia trampa</th>
+        <th>Suplementos</th>
+        <th>Lista de compra</th>
         <th>
             <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</a>
         </th>  
@@ -26,10 +33,18 @@
 <tbody>
     {% for nutricion in obj %}
     <tr>
-    <td>{{ nutricion.Tarifa }}</td>
-    <td>{{ nutricion.Duracion }}</td>
-    <td>{{ nutricion.Guia_Alimentos }}</td>
-    <td>{{ nutricion.Lista_Alimentos }}</td>
+    <td>{{ nutricion.dia }}</td>
+    <td>{{ nutricion.hora }}</td>
+    <td>{{ nutricion.tipo_comida }}</td>
+    <td>{{ nutricion.alimento }}</td>
+    <td>{{ nutricion.porcion }}</td>
+    <td>{{ nutricion.evitar }}</td>
+    <td>{{ nutricion.otras_recomendaciones }}</td>
+    <td>{{ nutricion.ingesta_agua }}</td>
+    <td>{{ nutricion.dia_trampa }}</td>
+    <td>{{ nutricion.suplementos }}</td>
+    <td>{{ nutricion.lista_compra }}</td>
+
     <td>
         <a href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="boton_editar">Editar</a>
         <a href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="boton_eliminar">Eliminar</a>
@@ -38,6 +53,9 @@
     {% endfor %}
 </tbody>
 </table>
+
+
+
 <div>
     <span>
         {% if page_obj.has_previous %}

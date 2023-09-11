@@ -14,6 +14,7 @@
 <table class="table table-striped table-dark alt" >
     <thead>
       <tr class="campo">
+        <th>ID</th>
         <th>Objetivo Fisico</th>
         <th>Nivel de entrenamiento años</th>
         <th>Frecuencia semanal</th>
@@ -35,6 +36,7 @@
     <tbody>
       {% for diagnostico in obj %}
       <tr>
+        <td data-title="Objetivo fisico" scope="row">{{ diagnostico.id }}</td>
         <td data-title="Objetivo fisico" scope="row">{{ diagnostico.Objetivo_Fisico }}</td>
         <td data-title="nivel de entrenamiento" scope="row">{{ diagnostico.Nivel_entrenamiento_años }}</td>
         <td data-title="frecuencia semanal" scope="row">{{ diagnostico.Frecuencia_semanal }}</td>
@@ -49,8 +51,8 @@
         <td data-title="fracturas" scope="row">{{ diagnostico.Fracturas }}</td>
         <td data-title="tiepo de sueño" scope="row">{{ diagnostico.Tiempo_sueño }}</td>
         <td>
-          <a href="{% url 'editar_diagnostico' pk=diagnostico.pk %}" class="boton_editar">Editar</a>
-          <a href="{% url 'eliminar_diagnostico' pk=diagnostico.pk %}" class="boton_eliminar">Eliminar</a>
+          <a href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_diagnostico' diagnostico.id %}')" role="button"><i class="fa fa-edit"></i></a>
+          <a href="#" onclick="return abrir_modal('{% url 'eliminar_diagnostico' diagnostico.id %}')" class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></a>
         </td>
       </tr>
       {% endfor %}

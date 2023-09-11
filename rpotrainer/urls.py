@@ -3,7 +3,7 @@ from django.urls import path, re_path, include
 from apps.entrenamiento.views import entrenamientosListView, entrenamientoCreateView, entrenamientoUpdateView, entrenamientoDeleteView
 from apps.medidas.views import medidasListView, medidasCreateView, medidasUpdateView, medidasDeleteView
 from apps.nutricion.views import nutricionListView, nutricionCreateView, nutricionUpdateView, nutricionDeleteView
-from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView, entrenadorDeleteView
+from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView
 from apps.diagnostico.views import diagnosticoListView, diagnosticoCreateView, diagnosticoUpdateView, diagnosticoDeleteView
 from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView
 from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_usuario
@@ -36,7 +36,6 @@ urlpatterns = [
     path('entrenador/', entrenadorListView.as_view(), name='lista_entrenador'),
     path('entrenador/crear/', entrenadorCreateView.as_view(), name='crear_entrenador'),
     path('entrenador/<int:pk>/editar/', entrenadorUpdateView.as_view(), name='editar_entrenador'),
-    path('entrenador/<int:pk>/eliminar/', entrenadorDeleteView.as_view(), name='eliminar_entrenador'),
     path('diagnostico/', diagnosticoListView.as_view(), name='lista_diagnostico'),
     path('diagnostico/crear/', diagnosticoCreateView.as_view(), name='crear_diagnostico'),
     path('diagnostico/<int:pk>/editar/', diagnosticoUpdateView.as_view(), name='editar_diagnostico'),

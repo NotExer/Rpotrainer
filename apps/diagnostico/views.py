@@ -22,8 +22,10 @@ class diagnosticoUpdateView(UpdateView):
     form_class = diagnosticoform
     template_name = 'diagnostico/editar_diagnostico.html'
     success_url = reverse_lazy('lista_diagnostico')
+    context_object_name = 'obj'
 
 class diagnosticoDeleteView(DeleteView):
     model = diagnostico
     template_name = 'diagnostico/eliminar_diagnostico.html'
     success_url = reverse_lazy('lista_diagnostico')
+    context_object_name = 'obj'

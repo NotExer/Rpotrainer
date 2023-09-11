@@ -20,23 +20,24 @@
     <th scope="col">Telefono</th>
     <th scope="col">Email</th>
     <th scope="col">Domicilio</th>
+    <th></th>
     </tr>
 </thead>
 <tbody>
     {% for cliente in obj %}
     <tr class="campo">
-    <td data-title="Id" scope="row">{{ cliente.id }}</td>
-    <td data-title="Nombre" scope="row">{{ cliente.NombreCompleto }}</td>
-    <td data-title="FechaInicio" scope="row">{{ cliente.FechaInicio }}</td>
-    <td data-title="FechaFin" scope="row">{{ cliente.FechaFin  }}</td>
-    <td data-title="FechaPago" scope="row">{{ cliente.FechaPago }}</td>
-    <td data-title="Edad" scope="row">{{ cliente.Edad }}</td>
-    <td data-title="Telefono" scope="row">{{ cliente.Telefono }}</td>
-    <td data-title="Email" scope="row">{{ cliente.Email }}</td>
-    <td data-title="Domicilio" scope="row">{{ cliente.Domicilio }}</td>
+    <td data-title="Id:" scope="row">{{ cliente.id }}</td>
+    <td data-title="Nombre:" scope="row">{{ cliente.NombreCompleto }}</td>
+    <td data-title="FechaInicio:" scope="row">{{ cliente.FechaInicio }}</td>
+    <td data-title="FechaFin:" scope="row">{{ cliente.FechaFin  }}</td>
+    <td data-title="FechaPago:" scope="row">{{ cliente.FechaPago }}</td>
+    <td data-title="Edad:" scope="row">{{ cliente.Edad }}</td>
+    <td data-title="Telefono:" scope="row">{{ cliente.Telefono }}</td>
+    <td data-title="Email:" scope="row">{{ cliente.Email }}</td>
+    <td data-title="Domicilio:" scope="row">{{ cliente.Domicilio }}</td>
     <td>
         <a href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_cliente' cliente.id %}')" role="button"><i class="fa fa-edit"></i></a>
-        <a class="btn btn-danger btn-circle" role="button"><i class="fa fa-toggle-off"></i></a>
+        <a class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></a>
 
     </td>
     </tr>
