@@ -10,7 +10,6 @@ from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_
 from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_main, sobre_main, testimonios_main, contacto_main
 from django.contrib.auth.urls import *
 
-
 urlpatterns = [
     re_path(r'^$', Home, name='Home'),
     re_path(r'^entrenamientoInfo$', entrenamiento_main, name='entrenamiento_main'),
@@ -48,4 +47,5 @@ urlpatterns = [
     path('registro/', registro_usuario, name='registro_usuario'), 
     path('cerrar-sesion/', LogOutView.as_view(), name='log-out'),
     path('accounts/', include ('django.contrib.auth.urls')),
+
 ]

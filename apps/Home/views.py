@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 def Home(request):
     return render(request, "index/landing.html")
 
@@ -23,3 +24,5 @@ def testimonios_main(request):
 
 def contacto_main(request):
     return render(request, "index/contacto_main.html")
+
+
