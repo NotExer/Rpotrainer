@@ -3,12 +3,14 @@ from apps.diagnostico.models import diagnostico
 from apps.diagnostico.form import diagnosticoform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class diagnosticoListView(ListView):
+class diagnosticoListView(LoginRequiredMixin, ListView):
     model = diagnostico
     template_name = 'diagnostico/lista_diagnostico.html'
     context_object_name = 'obj'
     paginate_by = 5
+    login_url="iniciar"
 
 class diagnosticoCreateView(CreateView):
     model = diagnostico

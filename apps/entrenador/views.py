@@ -3,12 +3,14 @@ from apps.entrenador.models import entrenador
 from apps.entrenador.form import entrenadorform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class entrenadorListView(ListView):
+class entrenadorListView(LoginRequiredMixin, ListView):
     model = entrenador
     template_name = 'entrenador/lista_entrenador.html'
     context_object_name = 'obj'
     paginate_by = 5
+    login_url="iniciar"
 
 class entrenadorCreateView(CreateView):
     model = entrenador

@@ -3,12 +3,14 @@ from apps.nutricion.models import nutricion
 from apps.nutricion.form import nutricionform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class nutricionListView(ListView):
+class nutricionListView(LoginRequiredMixin,ListView):
     model = nutricion
     template_name = 'nutricion/lista_nutricion.html'
     context_object_name = 'obj'
     paginate_by = 5
+    login_url="iniciar"
 
 class nutricionCreateView(CreateView):
     model = nutricion

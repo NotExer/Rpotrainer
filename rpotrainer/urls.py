@@ -6,6 +6,7 @@ from apps.nutricion.views import nutricionListView, nutricionCreateView, nutrici
 from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView
 from apps.diagnostico.views import diagnosticoListView, diagnosticoCreateView, diagnosticoUpdateView, diagnosticoDeleteView
 from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView
+from apps.planes.views import planesListView, planesCreateView, planesUpdateView, planesDeleteView
 from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_usuario
 from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_main, sobre_main, testimonios_main, contacto_main
 from django.contrib.auth.urls import *
@@ -43,6 +44,10 @@ urlpatterns = [
     path('cliente/crear/', clienteCreateView.as_view(), name='crear_cliente'),
     path('cliente/<int:pk>/editar/', clienteUpdateView.as_view(), name='editar_cliente'),
     path('cliente/<int:pk>/eliminar/', clienteDeleteView.as_view(), name='eliminar_cliente'),
+    path('planes/', planesListView.as_view(), name='lista_planes'),
+    path('planes/crear/', planesCreateView.as_view(), name='crear_planes'),
+    path('planes/<int:pk>/editar/', planesUpdateView.as_view(), name='editar_planes'),
+    path('planes/<int:pk>/eliminar/', planesDeleteView.as_view(), name='eliminar_planes'),
     path('incia-sesion/', LogInView.as_view(), name='iniciar'),
     path('registro/', registro_usuario, name='registro_usuario'), 
     path('cerrar-sesion/', LogOutView.as_view(), name='log-out'),

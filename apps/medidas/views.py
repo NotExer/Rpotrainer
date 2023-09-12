@@ -3,12 +3,14 @@ from apps.medidas.models import medidas
 from apps.medidas.form import medidasform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class medidasListView(ListView):
+class medidasListView(LoginRequiredMixin, ListView):
     model = medidas
     template_name = 'medidas/lista_medidas.html'
     context_object_name = 'obj'
     paginate_by = 5
+    login_url="iniciar"
 
 class medidasCreateView(CreateView):
     model = medidas

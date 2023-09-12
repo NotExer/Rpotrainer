@@ -1,0 +1,60 @@
+{% extends 'index/index.html' %}
+{% block content %}
+
+
+
+<div  class="style-title" >
+  <h1 class="titulo">Mi plan</h1>
+</div>
+
+<div  class="style-title" >
+  <button href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_planes' %}')" role="button">Crear</button>
+</div>
+  
+<table class="table table-striped table-dark">
+    <thead>
+        <tr class="campo">
+        <th>ID</th>
+          <th>Nombre</th>
+          <th>Tarifa</th>
+          <th>Fecha de inicio</th>
+          <th>Fecha de finalización</th>
+          <th>Modalidad</th>
+          <th></th>  
+      </tr>
+    </thead>
+    <tbody>
+      {% for planes in obj %}
+      <tr>
+        <td data-title="ID">{{ planes.id}}</td>
+        <td data-title="Nombre">{{ planes.nombre }}</td>
+        <td data-title="Numero de contacto">{{ planes.tarifa }}</td>
+        <td data-title="Fecha de inicio">{{ planes.fechainicio }}</td>
+        <td data-title="Fecha finalización">{{ planes.fechafin }}</td>
+        <td data-title="Modalidad">{{ planes.modalidad }}</td>
+        <td>
+          <button href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
+        </td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div>
+    <span>
+      {% if page_obj.has_previous %}
+
+      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
+      {% endif %}
+
+      <span class="paginacion">
+          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
+      </span>
+
+  {% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
+
+  {% endif %}
+  </span>
+
+{% endblock %}  

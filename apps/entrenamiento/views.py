@@ -3,13 +3,15 @@ from apps.entrenamiento.form import entrenamientoform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class entrenamientosListView(ListView):
+class entrenamientosListView(LoginRequiredMixin, ListView):
     model = entrenamiento
     template_name = 'entrenamiento/lista_entrenamientos.html'
     context_object_name = 'obj'
     paginate_by = 5
+    login_url="iniciar"
 
 class entrenamientoCreateView(CreateView):
     model = entrenamiento
