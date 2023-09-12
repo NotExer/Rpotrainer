@@ -25,7 +25,7 @@ class planesform(forms.ModelForm):
         }
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-            'tarifa': forms.FloatField(),
+            'tarifa': forms.NumberInput(attrs={'class': 'form-control'}),
             'fechainicio': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'fechafin': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'modalidad': forms.TextInput(attrs={'class': 'form-control'}),

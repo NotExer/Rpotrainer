@@ -18,7 +18,7 @@ class planesListView(LoginRequiredMixin, ListView, ):
 class planesCreateView(CreateView):
     model = planes
     form_class = planesform
-    template_name = 'cliente/crear_planes.html'
+    template_name = 'planes/crear_planes.html'
     context_object_name = 'obj'
     success_url = reverse_lazy('lista_planes')
 
