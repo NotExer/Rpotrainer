@@ -23,7 +23,8 @@
     <th scope="col">Telefono</th>
     <th scope="col">Email</th>
     <th scope="col">Dirección</th>
-    <th></th>
+    <th><a href="{% url 'lista_medidas' %}">Medidas</a></th>
+    <th><a href="{% url 'lista_diagnostico' %}">Diagnostico</a></th>
     </tr>
 </thead>
 <tbody>
@@ -56,22 +57,6 @@
 
 
 
-<div>
-    <span>
-        {% if page_obj.has_previous %}
-
-        <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
-        {% endif %}
-
-        <span class="paginacion">
-            Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-        </span>
-
-    {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
-
-    {% endif %}
-    </span>
 
 {% endblock %}  
 
@@ -84,3 +69,11 @@
     });
 </script>
 {% endblock scripts_local%}
+
+{% block js_page %}
+<script>
+    $(document).ready(function(){
+        $('.table').dataTable();
+    });
+</script>
+{% endblock %}

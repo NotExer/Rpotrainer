@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class diagnostico(models.Model):
     Objetivo_Fisico=models.CharField(max_length=900)
     Nivel_entrenamiento_años=models.IntegerField()
