@@ -4,6 +4,7 @@ from apps.cliente.form import clienteform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect, render
 
 
 class clienteListView(LoginRequiredMixin, ListView, ):
@@ -33,6 +34,21 @@ class clienteDeleteView(DeleteView):
     template_name = 'cliente/eliminar_cliente.html'
     success_url = reverse_lazy('lista_cliente')
     context_object_name = 'obj'
+    
+def cliente_inactivar(request, id):
+    cliente=cliente.objects.filter(pk=id).first()
+    contexto={}
+    template_name="cliente/inactivar_cliente.html"
+    if not cliente:
+        return redirect("listar_cliente")
+    
+    if request.method=='GET':
+        context={'obj':cliente}
+    
+    if request.method=='POST':
+        cliente.estado=False
+        cliente.save()
+        return redirect("listar_cliente")
     
     
     

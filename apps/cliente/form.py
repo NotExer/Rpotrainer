@@ -10,10 +10,6 @@ class clienteform(forms.ModelForm):
             'FechaInicio',
             'FechaFin',
             'FechaPago',
-            'Edad',
-            'Telefono',
-            'Email',
-            'Domicilio',
 
         ]
         labels= {
@@ -21,20 +17,10 @@ class clienteform(forms.ModelForm):
             'FechaInicio':'Fecha de inicio',
             'Fecha Fin':'Fecha de finalización',
             'FechaPago':'Fecha de pago',
-            'Edad': 'Edad',
-            'Telefono':'Telefono',
-            'Email':'Email',
-            'Domicilio': 'Domicilio',
-            
         }
         widgets = {
             'NombreCompleto': forms.TextInput(attrs={'class': 'form-control'}),
             'FechaInicio': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'FechaFin': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'FechaPago': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'Edad': forms.NumberInput(attrs={'class': 'form-control'}),
-            'Telefono': forms.NumberInput(attrs={'class': 'form-control'}),
-            'Email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'Domicilio': forms.Textarea(attrs={'class': 'form-contrl'}),
-            
         }

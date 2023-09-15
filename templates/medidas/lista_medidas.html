@@ -7,8 +7,10 @@
 <div  class="style-title" >
   <h1 class="titulo">Medidas</h1>
 </div>
-
-
+<div  class="style-title" >
+<button  class="btn btn-success" onclick="return abrir_modal('{% url 'crear_medidas' %}')" role="button">Crear</button>
+</div>
+<div class="pad">
 <table>
     <thead>
       <tr>
@@ -23,9 +25,6 @@
         <th>Muslo Izquierdo Contraido</th>
         <th>Pantorrilla Derecha Contraida</th>
         <th>Pantorrilla Izquierda Contraida</th>
-        <th>
-          <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_medidas' %}')" role="button">Crear</a>
-        </th>  
       </tr>
     </thead>
     <tbody>

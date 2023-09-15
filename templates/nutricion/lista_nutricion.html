@@ -4,13 +4,13 @@
 
 
 
-<div style="padding-bottom: 2%; align-items: center;" >
-    <center>
-      <h1 class="titulo">Nutricion</h1>
-    </center>
-  </div>
-
-
+<div  class="style-title" >
+    <h1 class="titulo">nutricion</h1>
+</div>
+<div  class="style-title" >
+<button  class="btn btn-success" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</button>
+</div>
+<div class="pad">
 <table >
 <thead>
     <tr>
@@ -25,9 +25,6 @@
         <th>Dia trampa</th>
         <th>Suplementos</th>
         <th>Lista de compra</th>
-        <th>
-            <a href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</a>
-        </th>  
     </tr>
 </thead>
 <tbody>

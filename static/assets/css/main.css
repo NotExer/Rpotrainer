@@ -4413,3 +4413,16 @@ img {
 	color: #6f00ff;
 	transition: color 0.3s;
   }
+
+.container_test{
+	gap: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.box_container{
+	width: 20rem;
+	height: 10rem;
+	border: 5px solid rgb(255, 69, 69);
+}

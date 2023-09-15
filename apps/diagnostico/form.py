@@ -6,6 +6,10 @@ class diagnosticoform(forms.ModelForm):
         model=diagnostico
         
         fields = [
+            'Edad',
+            'Telefono',
+            'Email',
+            'Domicilio',
             'Objetivo_Fisico',
             'Nivel_entrenamiento_años',
             'Frecuencia_semanal',
@@ -22,6 +26,10 @@ class diagnosticoform(forms.ModelForm):
         ]
         
         labels= {
+            'Edad': 'Edad',
+            'Telefono':'Telefono',
+            'Email':'Email',
+            'Domicilio': 'Domicilio',
             'Objetivo_Fisico':'Objetivo Fisico',
             'Nivel_entrenamiento_años':'Nivel de entrenamiento (años)',
             'Frecuencia_semanal':'Frecuencia semanal',
@@ -37,6 +45,10 @@ class diagnosticoform(forms.ModelForm):
             'Tiempo_sueño':'Tiempo sueño',
         }
         widgets = {
+            'Edad': forms.NumberInput(attrs={'class': 'form-control'}),
+            'Telefono': forms.NumberInput(attrs={'class': 'form-control'}),
+            'Email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'Domicilio': forms.Textarea(attrs={'class': 'form-contrl'}),
             'Objetivo_Fisico': forms.TextInput(attrs={'class': 'form-control'}),
             'Nivel_entrenamiento_años': forms.NumberInput(attrs={'class': 'form-control'}),
             'Frecuencia_semanal': forms.NumberInput(attrs={'class': 'form-control'}),

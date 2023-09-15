@@ -2,6 +2,10 @@ from django.db import models
 
 
 class diagnostico(models.Model):
+    Edad = models.IntegerField()
+    Telefono = models.CharField(max_length=20)
+    Email = models.EmailField()
+    Domicilio = models.CharField(max_length=200)
     Objetivo_Fisico=models.CharField(max_length=900)
     Nivel_entrenamiento_años=models.IntegerField()
     Frecuencia_semanal=models.IntegerField()
