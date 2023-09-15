@@ -8,6 +8,3 @@ class cliente(models.Model):
     FechaInicio = models.DateField()
     FechaFin = models.DateField()
     FechaPago = models.DateField()
-
-
-    

@@ -4232,7 +4232,7 @@ body.is-touch #banner {
 		resize: none;
 	}
 
-	@media (max-width: 1200px){
+	@media (max-width: 1400px){
 		.table{
 			width: 100%;
 		}

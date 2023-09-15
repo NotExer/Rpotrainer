@@ -37,20 +37,22 @@
     </tbody>
   </table>
   <div>
-    <span>
-      {% if page_obj.has_previous %}
 
-      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
-      {% endif %}
-
-      <span class="paginacion">
-          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-      </span>
-
-  {% if page_obj.has_next %}
-  <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
-
-  {% endif %}
-  </span>
 
 {% endblock %}  
+
+{%block scripts_local%}
+<script>
+    $(document).ready(function (){
+        jQuery.datetimepicker.setlocale('es')
+    });
+</script>
+{% endblock scripts_local%}
+
+{% block js_page %}
+<script>
+    $(document).ready(function(){
+        $('.table').dataTable();
+    });
+</script>
+{% endblock %}

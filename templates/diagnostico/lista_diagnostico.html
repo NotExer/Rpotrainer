@@ -9,8 +9,9 @@
 <div  class="style-title" >
 <button href="#" class="boton_crear" onclick="return abrir_modal('{% url 'crear_diagnostico' %}')" role="button">Crear</button>
 </div>
+
 <div class="pad">
-  <table class="table table-striped table-dark alt">
+<table class="table table-striped table-dark alt">
     <thead>
       <tr class="campo">
         <th>ID</th>
@@ -37,7 +38,7 @@
     <tbody>
       {% for diagnostico in obj %}
       <tr>
-        <td data-title="Objetivo id" scope="row">{{ diagnostico.id }}</td>
+        <td data-title="Diganosico ID" scope="row">{{ diagnostico.id }}</td>
         <td data-title="Edad" scope="row">{{ diagnostico.Edad }}</td>
         <td data-title="telefono" scope="row">{{ diagnostico.telefono }}</td>
         <td data-title="Email" scope="row">{{ diagnostico.email }}</td>
@@ -63,22 +64,23 @@
       {% endfor %}
     </tbody>
   </table>
-  <div>
-
-    <span>
-      {% if page_obj.has_previous %}
-
-      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
-      {% endif %}
-
-      <span class="paginacion">
-          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-      </span>
-
-  {% if page_obj.has_next %}
-  <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
-
-  {% endif %}
-  </span>
+  
 
 {% endblock %}  
+
+
+{%block scripts_local%}
+<script>
+    $(document).ready(function (){
+        jQuery.datetimepicker.setlocale('es')
+    });
+</script>
+{% endblock scripts_local%}
+
+{% block js_page %}
+<script>
+    $(document).ready(function(){
+        $('.table').dataTable();
+    });
+</script>
+{% endblock %}
