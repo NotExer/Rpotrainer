@@ -3,9 +3,9 @@ from django.urls import path, re_path, include
 from apps.entrenamiento.views import entrenamientosListView, entrenamientoCreateView, entrenamientoUpdateView, entrenamientoDeleteView
 from apps.medidas.views import medidasListView, medidasCreateView, medidasUpdateView, medidasDeleteView
 from apps.nutricion.views import nutricionListView, nutricionCreateView, nutricionUpdateView, nutricionDeleteView
-from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView
+from apps.entrenador.views import entrenadorListView, entrenadorCreateView, entrenadorUpdateView, entrenadorDeleteView
 from apps.diagnostico.views import diagnosticoListView, diagnosticoCreateView, diagnosticoUpdateView, diagnosticoDeleteView
-from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView
+from apps.cliente.views import clienteListView, clienteCreateView, clienteUpdateView, clienteDeleteView, cliente_inactivar
 from apps.planes.views import planesListView, planesCreateView, planesUpdateView, planesDeleteView
 from apps.registro.views import CustomUserForm, LogInView, LogOutView, registro_usuario
 from apps.Home.views import Home, entrenamiento_main, asesorias_main, nutricion_main, sobre_main, testimonios_main, contacto_main
@@ -36,6 +36,7 @@ urlpatterns = [
     path('entrenador/', entrenadorListView.as_view(), name='lista_entrenador'),
     path('entrenador/crear/', entrenadorCreateView.as_view(), name='crear_entrenador'),
     path('entrenador/<int:pk>/editar/', entrenadorUpdateView.as_view(), name='editar_entrenador'),
+        path('entrenador/<int:pk>/eliminar/', entrenadorDeleteView.as_view(), name='eliminar_entrenador'),
     path('diagnostico/', diagnosticoListView.as_view(), name='lista_diagnostico'),
     path('diagnostico/crear/', diagnosticoCreateView.as_view(), name='crear_diagnostico'),
     path('diagnostico/<int:pk>/editar/', diagnosticoUpdateView.as_view(), name='editar_diagnostico'),
@@ -44,7 +45,7 @@ urlpatterns = [
     path('cliente/crear/', clienteCreateView.as_view(), name='crear_cliente'),
     path('cliente/<int:pk>/editar/', clienteUpdateView.as_view(), name='editar_cliente'),
     path('cliente/<int:pk>/eliminar/', clienteDeleteView.as_view(), name='eliminar_cliente'),
-    
+    path('cliente/<int:pk>/inactivar/', cliente_inactivar, name='inactivar_cliente'),
     path('planes/', planesListView.as_view(), name='lista_planes'),
     path('planes/crear/', planesCreateView.as_view(), name='crear_planes'),
     path('planes/<int:pk>/editar/', planesUpdateView.as_view(), name='editar_planes'),
@@ -53,5 +54,4 @@ urlpatterns = [
     path('registro/', registro_usuario, name='registro_usuario'), 
     path('cerrar-sesion/', LogOutView.as_view(), name='log-out'),
     path('accounts/', include ('django.contrib.auth.urls')),
-
 ]

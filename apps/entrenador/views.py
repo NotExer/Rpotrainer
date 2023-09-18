@@ -25,3 +25,11 @@ class entrenadorUpdateView(UpdateView):
     template_name = 'entrenador/editar_entrenador.html'
     success_url = reverse_lazy('lista_entrenador')
     context_object_name = 'obj'
+    
+    
+class entrenadorDeleteView(UpdateView):
+    model = entrenador
+    form_class = entrenadorform
+    template_name = 'entrenador/eliminar_entrenador.html'
+    success_url = reverse_lazy('lista_entrenador')
+    context_object_name = 'obj'

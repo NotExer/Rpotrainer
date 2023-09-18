@@ -25,6 +25,7 @@
         <th>ID</th>
           <th>Nombre</th>
           <th>Tarifa</th>
+          <th>Descuento</th>
           <th>Fecha de inicio</th>
           <th>Fecha de finalización</th>
           <th>Modalidad</th>
@@ -37,11 +38,12 @@
         <td data-title="ID">{{ planes.id}}</td>
         <td data-title="Nombre">{{ planes.nombre }}</td>
         <td data-title="Numero de contacto">{{ planes.tarifa }}</td>
+        <td data-title="Descuento">{{ planes.descuento }}</td>
         <td data-title="Fecha de inicio">{{ planes.fechainicio }}</td>
         <td data-title="Fecha finalización">{{ planes.fechafin }}</td>
         <td data-title="Modalidad">{{ planes.modalidad }}</td>
         <td>
-          <button href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
+          <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
         </td>
         
       </tr>
