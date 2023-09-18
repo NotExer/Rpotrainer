@@ -19,13 +19,12 @@
 			<div id="page-wrapper">
 				
 
-
 				<header id="header">
 					<h1 id="logo"><a href="{% url 'Home' %}">RPO TRAINER</a></h1>
 					<nav id="nav">
 						<ul>
 							{% if user.is_authenticated %}
-							<li><a href="{% url 'lista_cliente' %}">Mi plan</a></li>
+							<li><a href="{% url 'lista_planes' %}">Mi plan</a></li>
 								<li>
 								<a href="#two">Planes</a>
 								<ul>
@@ -42,7 +41,27 @@
 							<li><a href="{% url 'testimonios_main' %}">Testimonios</a></li>
 							<li><a href="{% url 'contacto_main' %}">Contacto</a></li>
 	
-							<li><a href="{% url 'log-out' %}" class="button primary">Cerrar Sesion</a></li>
+
+
+
+						
+							<li>
+								<a href="{% url 'log-out' %}" class="button primary">{{user.username}}</a>
+							<ul>
+								<li><a href="{% url 'lista_diagnostico' %}">Diagnostico</a></li>
+								<li><a href="{% url 'lista_medidas' %}">Medidas</a></li>
+								<li><a href="{% url 'lista_cliente' %}">Usuarios</a></li>
+								<li><a href="{% url 'log-out' %}">Cerrar Sesion</a></li>
+								<li>
+								</li>
+							</ul>
+						</li>	
+
+
+
+
+
+							
 							{% else %}
 							<li>
 							<a href="#two">Planes</a>

@@ -7,6 +7,14 @@
   <h1 class="titulo">Mi plan</h1>
 </div>
 
+<div class="container_plan">
+    <a class="box_plan"  href="{% url 'lista_nutricion' %}">Plan de Nutricion</a>
+   <a class="box_plan" href="{% url 'lista_entrenamientos' %}">Plan de entrenamiento</a>
+</div>
+
+
+
+
 <div  class="style-title" >
   <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'crear_planes' %}')" role="button">Crear</button>
 </div>
@@ -41,20 +49,7 @@
     </tbody>
   </table>
   <div>
-    <span>
-      {% if page_obj.has_previous %}
-
-      <a href="?page={{ page_obj.previous_page_number}}" class="paginacion">&laquo; Previo</a>
-      {% endif %}
-
-      <span class="paginacion">
-          Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}.
-      </span>
-
-  {% if page_obj.has_next %}
-  <a href="?page={{ page_obj.next_page_number}}" class="paginacion">siguiente &raquo;</a>
-
-  {% endif %}
-  </span>
+ 
 
 {% endblock %}  
+

@@ -4112,120 +4112,19 @@ body.is-touch #banner {
 				}
 
 }
-
-.boton_crear{
-	padding: 1.2em 3em;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	background-color: #23c483;
-	border: none;
-	border-radius: 10px;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	text-decoration: none;
-	color: #000000;
-	}
-	
-	.boton_crear:hover {
-	background-color: #23c483;
-	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-	color: 000000;
-	}
 	
 	.titulo{
 	text-decoration: none;
-	font-size: 40px;
-	
-	}
-	.style-title{
-		padding-bottom: 1%; 
-		align-items: center;
-		display: flex;
-		justify-content: center;
-
-	}
-	.button_eliminar {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		background-color: rgb(20, 20, 20);
-		border: none;
-		font-weight: 600;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-		cursor: pointer;
-		transition-duration: .3s;
-		overflow: hidden;
-		position: relative;
-	  }
-	  
-	  .svgIcon {
-		width: 12px;
-		transition-duration: .3s;
-	  }
-	  
-	  .svgIcon path {
-		fill: white;
-	  }
-	  
-	  .button_eliminar:hover {
-		width: 140px;
-		border-radius: 50px;
-		transition-duration: .3s;
-		background-color: rgb(255, 69, 69);
-		align-items: center;
-	  }
-	  
-	  .button_eliminar:hover .svgIcon {
-		width: 50px;
-		transition-duration: .3s;
-		transform: translateY(60%);
-	  }
-	  
-	  .button_eliminar::before {
-		position: absolute;
-		top: -20px;
-		content: "Delete";
-		color: white;
-		transition-duration: .3s;
-		font-size: 2px;
-	  }
-	  
-	  .button_eliminar:hover::before {
-		font-size: 13px;
-		opacity: 1;
-		transform: translateY(30px);
-		transition-duration: .3s;
-	  }
-
-
-	.boton_editar{
-	padding: 10px;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	background-color: #01eeff;
-	border: none;
-	border-radius: 10px;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	text-decoration: none;
-	color: #000000;
-	}
-	
-	.boton_editar:hover {
-	box-shadow: 0px 15px 20px rgba(70, 181, 255, 0.4);
-
-	
+	font-size: 60px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: transparent;
+	background-image:  linear-gradient(
+		180deg,
+		#E6576F,
+		#1C1D26
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
 	}
 
 	textarea {
@@ -4414,15 +4313,24 @@ img {
 	transition: color 0.3s;
   }
 
-.container_test{
+.container_plan{
 	gap: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
 
-.box_container{
+
+.box_plan{
+	display: flex;
 	width: 20rem;
 	height: 10rem;
-	border: 5px solid rgb(255, 69, 69);
+	border: 1px solid #E76278;
+	margin: 10px;
+	align-items: center;
+	justify-content: center;
+
+
 }
+

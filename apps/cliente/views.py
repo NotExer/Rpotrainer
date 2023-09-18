@@ -35,6 +35,11 @@ class clienteDeleteView(DeleteView):
     success_url = reverse_lazy('lista_cliente')
     context_object_name = 'obj'
     
+    
+    
+    
+    
+    
 def cliente_inactivar(request, id):
     cliente=cliente.objects.filter(pk=id).first()
     contexto={}

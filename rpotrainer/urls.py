@@ -44,6 +44,7 @@ urlpatterns = [
     path('cliente/crear/', clienteCreateView.as_view(), name='crear_cliente'),
     path('cliente/<int:pk>/editar/', clienteUpdateView.as_view(), name='editar_cliente'),
     path('cliente/<int:pk>/eliminar/', clienteDeleteView.as_view(), name='eliminar_cliente'),
+    
     path('planes/', planesListView.as_view(), name='lista_planes'),
     path('planes/crear/', planesCreateView.as_view(), name='crear_planes'),
     path('planes/<int:pk>/editar/', planesUpdateView.as_view(), name='editar_planes'),

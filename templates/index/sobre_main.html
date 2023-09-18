@@ -23,7 +23,7 @@
 				<nav id="nav">
 					<ul>
 						{% if user.is_authenticated %}
-						<li><a href="{% url 'lista_cliente' %}">Mi plan</a></li>
+						<li><a href="{% url 'lista_planes' %}">Mi plan</a></li>
 							<li>
 							<a href="#two">Planes</a>
 							<ul>
@@ -68,7 +68,30 @@
 				
 			<body/>
 	<!-- Main -->
+	<div class="nav-pad"></div>
+	<div>	
+	<div  class="style-title" >
+		<h1 class="titulo">Sobre mi</h1>
+	  </div>
+	  
+	  <div class="row">
+		<div class="col-6 col-12-xsmall">
 
+			<span class="image"><img src="{% static 'images/pic01.jpg' %}"/></span>
+	
+		</div>
+		<div class="col-6 col-12-xsmall">
+			<h3>Entrenamiento Semi Personalizado</h3>
+			<p>Entrenamiento dividido entre multiples personas se divide segun las capacidadades y el tiempo de cada integrante Plan de entrenamiento personalizado por individuo Medidas antropométricas al inicio y final del mes Chequeos semanales Disponibilidad 24/7 (dudas e inquietudes)</p>
+	
+		</div>
+	</div>
+
+
+
+	
+		
+</div>
 				
 
 			<!-- Footer -->
