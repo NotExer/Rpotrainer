@@ -36,18 +36,16 @@ flex-row-auto w-100 w-xl-300px">
 <!--begin::Line-->
 <div class="stepper-line w-40px"></div>
 <form method='post' class="form-inline">
-{% csrf_token %}
-<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-¿Desea inactivar {{ obj.descripcion}}?
-</div>
-<button class="btn btn-danger" type="submit" class="btn btn-primary";>
-Si, inactivar</button>
-{% comment %} <a class="btn btn-success" href="{% url 
-'inv:categoria_list' %}"> {% endcomment %}
-<button type="button" class="btn btn-success" onclick="return
-cerrar_modal()">
-Cancelar
-</button>
+    {% csrf_token %}
+    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+        ¿Desea inactivar {{ obj.id }}?
+    </div>
+   
+    <button class="btn btn-danger" type="submit" class="btn btn-primary";>
+        Si, inactivar</button>
+    {% comment %} <a class="btn btn-success" href="{% url 'inv:categoria_list' %}"> {% endcomment %}
+        <button type="button" class="btn btn-success" onclick="return cerrar_modal()">Cancelar</button>
+
 </form>
 </div>
 </div>

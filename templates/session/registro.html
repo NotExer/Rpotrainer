@@ -43,26 +43,7 @@
                         <h4 class="mb-3 pb-3">Registrarse</h4>
                         <form action="" method="POST">
                           {% csrf_token %} 
-						  <div>
-							<div>
-								<span></span>
-							</div>
-						  {{ form.username }}
-						  <div>
-							<div>
-								<span></span>
-							</div>
-						  {{ form.email }}
-						  <div>
-							<div>
-								<span></span>
-							</div>
-						  {{ form.password1 }}
-						  <div>
-							<div>
-								<span></span>
-							</div>
-						  {{ form.password2 }}
+                          {{ form.as_p}}
 
                           <input
                             type="submit"

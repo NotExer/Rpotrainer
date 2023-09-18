@@ -4,7 +4,9 @@ from apps.planes.form import planesform
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.utils import timezone
+from django.http import HttpResponse
+from django.template.loader import get_template
 
 
 class planesListView(LoginRequiredMixin, ListView, ):
@@ -37,5 +39,4 @@ class planesDeleteView(DeleteView):
     
     
     
-
-
+    

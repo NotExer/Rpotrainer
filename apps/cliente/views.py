@@ -5,6 +5,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
+from django.http import HttpResponse
+import json
 
 
 class clienteListView(LoginRequiredMixin, ListView, ):
@@ -41,19 +43,19 @@ class clienteDeleteView(DeleteView):
     
     
 def cliente_inactivar(request, id):
-    cliente=cliente.objects.filter(pk=id).first()
+    template_name="inactivar_cliente.html"
     contexto={}
-    template_name="cliente/inactivar_cliente.html"
-    if not cliente:
-        return redirect("listar_cliente")
-    
+    Cliente=cliente.objects.filter(pk=id).first()
+    if not Cliente:
+        return HttpResponse('Cliente no existe' + str(id))
     if request.method=='GET':
-        context={'obj':cliente}
-    
+        contexto={'obj':Cliente}
     if request.method=='POST':
-        cliente.estado=False
-        cliente.save()
-        return redirect("listar_cliente")
+        Cliente.estado=False
+        Cliente.save()
+        contexto={'obj':'OK'}
+        return HttpResponse('Cliente inactivado')
+    return render(request, template_name, contexto)
     
     
     

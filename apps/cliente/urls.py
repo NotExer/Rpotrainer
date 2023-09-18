@@ -6,5 +6,5 @@ urlpatterns = [
     path('cliente/crear/', clienteCreateView.as_view(), name='crear_cliente'),
     path('cliente/<int:pk>/editar/', clienteUpdateView.as_view(), name='editar_cliente'),
     path('cliente/<int:pk>/eliminar/', clienteDeleteView.as_view(), name='eliminar_cliente'),
-    path('cliente/<int:pk>/inactivar/', cliente_inactivar, name='inactivar_cliente')
+    path('cliente/<int:id>/inactivar/', cliente_inactivar, name='inactivar_cliente')
 ]

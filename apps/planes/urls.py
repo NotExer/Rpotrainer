@@ -1,5 +1,6 @@
 from apps.planes.views import planesListView, planesCreateView, planesUpdateView, planesDeleteView
 from django.urls import path
+from .reportes import re
 
 urlpatterns = [
     path('planes/', planesListView.as_view(), name='lista_planes'),
