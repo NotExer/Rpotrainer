@@ -9,15 +9,16 @@
 
 <div class="container_plan">
     <a class="box_plan"  href="{% url 'lista_nutricion' %}">Plan de Nutricion</a>
-   <a class="box_plan" href="{% url 'lista_entrenamientos' %}">Plan de entrenamiento</a>
-</div>
-
-
-
-
-<div  class="style-title" >
-  <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'crear_planes' %}')" role="button">Crear</button>
-</div>
+    <a class="box_plan" href="{% url 'lista_entrenamientos' %}">Plan de entrenamiento</a>
+  </div>
+  
+  
+  
+  
+  <div  class="style-title" >
+    <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'crear_planes' %}')" role="button">Crear</button>
+  </div>
+  <a class="btn btn-primary btn-circle" href="{% url 'print_planes' %}"><i class="fas fa-print"></i></a>
 <div class="pad">
 <table class="table table-striped table-dark">
     <thead>
@@ -26,24 +27,29 @@
           <th>Nombre</th>
           <th>Tarifa</th>
           <th>Descuento</th>
+          <th>Total</th>
           <th>Fecha de inicio</th>
           <th>Fecha de finalización</th>
           <th>Modalidad</th>
+          
           <th></th>  
       </tr>
     </thead>
     <tbody>
       {% for planes in obj %}
       <tr>
-        <td data-title="ID">{{ planes.id}}</td>
-        <td data-title="Nombre">{{ planes.nombre }}</td>
-        <td data-title="Numero de contacto">{{ planes.tarifa }}</td>
-        <td data-title="Descuento">{{ planes.descuento }}</td>
-        <td data-title="Fecha de inicio">{{ planes.fechainicio }}</td>
-        <td data-title="Fecha finalización">{{ planes.fechafin }}</td>
-        <td data-title="Modalidad">{{ planes.modalidad }}</td>
+        <td> {{ planes.id}}</td>
+        <td> {{ planes.nombre }}</td>
+        <td> {{ planes.tarifa }}</td>
+        <td> {{ planes.descuento }}</td>
+        <td> {{ planes.total }}</td>
+        <td> {{ planes.fechainicio }}</td>
+        <td> {{ planes.fechafin }}</td>
+        <td> {{ planes.modalidad }}</td>
         <td>
           <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
+          <a class="btn btn-primary btn-circle" href="{% url 'print_planes' planes.id %}"><i class="fas fa-print"></i></a>
+
         </td>
         
       </tr>
@@ -51,7 +57,7 @@
     </tbody>
   </table>
   <div>
- 
+
 
 {% endblock %}  
 

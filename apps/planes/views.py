@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from apps.planes.models import planes
 from apps.planes.form import planesform
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, View
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 from django.http import HttpResponse
 from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 
 class planesListView(LoginRequiredMixin, ListView, ):
@@ -36,7 +37,6 @@ class planesDeleteView(DeleteView):
     template_name = 'planes/eliminar_planes.html'
     success_url = reverse_lazy('lista_planes')
     context_object_name = 'obj'
-    
     
     
     
