@@ -22,11 +22,11 @@ class medidasform(forms.ModelForm):
             'Brazo_Relajado':'Brazo Relajado (cm)',
             'Cadera':'Cadera (cm)',
             'Cintura':'Cintura (cm)',
-            'Muslo_Derecho_Contraido':'Muslo Derecho Contraido (cm)',
-            'Pantorrilla_Derecha_Contraida':'Pantorrilla Derecha Contraida (cm)',
+            'Muslo_Derecho_Contraido':'Muslo Derecho Contraído (cm)',
+            'Pantorrilla_Derecha_Contraida':'Pantorrilla Derecha Contraída (cm)',
             'Brazo_Izquierdo':'Brazo Izquierdo (cm)',
-            'Muslo_Izquierdo_Contraido':'Muslo Izquierdo Contraido (cm)',
-            'Pantorrilla_Izquierda_Contraida':'Pantorrilla Izquierda Contraida (cm)',
+            'Muslo_Izquierdo_Contraido':'Muslo Izquierdo Contraído (cm)',
+            'Pantorrilla_Izquierda_Contraida':'Pantorrilla Izquierda Contraída (cm)',
         }
         widgets = {
             'Torax': forms.NumberInput(attrs={'class': 'form-control'}),

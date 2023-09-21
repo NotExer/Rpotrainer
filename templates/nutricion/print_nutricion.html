@@ -1,0 +1,54 @@
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte de nutrición</title>
+
+</head>
+<body>
+<div class="container">
+<div class="card">
+
+    <div class="card-header">
+        <h4>Reporte plan</h4>
+        <h3>Reporte de plan al {{ today|date:"d/m/Y"}}</h3>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Hora</th>
+                    <th>Tipo de comida</th>
+                    <th>Alimento</th>
+                    <th>Porcion</th>
+                    <th>Alimentos a evitar</th>
+                    <th>Otras recomendaciones</th>
+                    <th>Ingesta de agua</th>
+                    <th>Dia trampa</th>
+                    <th>Suplementos</th>
+                    <th>Lista de compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nutricion in obj %}
+                <tr>
+                <td>{{ nutricion.dia }}</td>
+                <td>{{ nutricion.hora }}</td>
+                <td>{{ nutricion.tipo_comida }}</td>
+                <td>{{ nutricion.alimento }}</td>
+                <td>{{ nutricion.porcion }}</td>
+                <td>{{ nutricion.evitar }}</td>
+                <td>{{ nutricion.otras_recomendaciones }}</td>
+                <td>{{ nutricion.ingesta_agua }}</td>
+                <td>{{ nutricion.dia_trampa }}</td>
+                <td>{{ nutricion.suplementos }}</td>
+                <td>{{ nutricion.lista_compra }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </body>
+        </html>

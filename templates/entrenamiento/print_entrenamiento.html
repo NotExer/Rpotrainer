@@ -1,0 +1,54 @@
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte de nutrición</title>
+
+</head>
+<body>
+<div class="container">
+<div class="card">
+
+    <div class="card-header">
+        <h4>Reporte plan</h4>
+        <h3>Reporte de plan al {{ today|date:"d/m/Y"}}</h3>
+        </div>
+        <table>
+            <thead>
+                <tr class="campo">
+                  <th>ID</th>
+                  <th>Musculo</th>
+                  <th>Ejericio</th>
+                  <th>Series</th>
+                  <th>Repeticiones</th>
+                  <th>Rir</th>
+                  <th>Cadencia</th>
+                  <th>Micro Pausa</th>
+                  <th>Macro Pausa</th>
+                  <th>Descripcion</th>
+                  <th>Imagen</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for entrenamiento in obj %}
+                <tr>
+                  <td data-title="ID">{{ entrenamiento.id }}</td>
+                  <td data-title="Musculo">{{ entrenamiento.musculo }}</td>
+                  <td data-title="Ejercicio">{{ entrenamiento.ejercicio }}</td>
+                  <td data-title="Series">{{ entrenamiento.series }}</td>
+                  <td data-title="Repeticiones">{{ entrenamiento.repeticiones }}</td>
+                  <td data-title="Rir">{{ entrenamiento.rir }}</td>
+                  <td data-title="Cadencia">{{ entrenamiento.cadencia }}</td>
+                  <td data-title="Micro Pausa">{{ entrenamiento.microPausa }}</td>
+                  <td data-title="Macro Pausa">{{ entrenamiento.macroPausa }}</td>
+                  <td data-title="Descripcion">{{ entrenamiento.descripcion }}</td>
+                  <td data-title="Imagen">{{ entrenamiento.imagen }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+        </div>
+        </div>
+        </body>
+        </html>

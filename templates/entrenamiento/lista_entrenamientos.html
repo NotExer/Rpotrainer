@@ -8,6 +8,7 @@
 </div>
 <div  class="style-title" >
 <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'crear_entrenamiento' %}')" role="button">Crear</button>
+<a class="btn btn-primary btn-circle" href="{% url 'print_entrenamiento' %}"><i class="fas fa-print"></i></a>
 </div>
 <div class="pad">
   <table class="table table-striped table-dark alt">
@@ -20,8 +21,8 @@
         <th>Repeticiones</th>
         <th>Rir</th>
         <th>Cadencia</th>
-        <th>Micro Pausa</th>
-        <th>Macro Pausa</th>
+        <th>Micro Pausa (min)</th>
+        <th>Macro Pausa (min)</th>
         <th>Descripcion</th>
         <th>Imagen</th>
       </tr>
@@ -65,8 +66,33 @@
 
 {% block js_page %}
 <script>
-    $(document).ready(function(){
-        $('.table').dataTable();
+  $(document).ready(function() {
+    //$('#example').DataTable({
+         $(`.table`).DataTable({
+      "language": {
+       // "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+       "decimal": "",
+       "emptyTable": "No hay información",
+       "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+       "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+       "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+       "infoPostFix": "",
+       "thousands": ",",
+       "lengthMenu": "Mostrar _MENU_ Entradas",
+       "loadingRecords": "Cargando...",
+       "processing": "Procesando...",
+       "search": "Buscar:",
+       "zeroRecords": "Sin resultados encontrados",
+       "paginate": {
+           "first": "Primero",
+           "last": "Ultimo",
+           "next": "Siguiente",
+           "previous": "Anterior"
+       }
+      }
     });
-</script>
+  });
+
+
+</script>    
 {% endblock %}

@@ -24,18 +24,18 @@
       <tr class="campo">
         <th>ID</th>
         <th>Edad</th>
-        <th>Telefono</th>
+        <th>Teléfono</th>
         <th>Email</th>
         <th>Domicilio</th>
-        <th>Objetivo Fisico</th>
-        <th>Nivel de entrenamiento años</th>
+        <th>Objetivo Físico</th>
+        <th>Nivel de entrenamiento (años)</th>
         <th>Frecuencia semanal</th>
-        <th>Dias de entrenamiento</th>
-        <th>Tiempo Por Sesion</th>
+        <th>Días de entrenamiento</th>
+        <th>Tiempo Por Sesión</th>
         <th>Material Entreno</th>
-        <th>Fuma</th>
-        <th>Consume alcohol</th>
-        <th>Cirugias anteriores</th>
+        <th>¿Fuma?</th>
+        <th>¿Consume alcohol?</th>
+        <th>Cirugías anteriores</th>
         <th>Entrenos anteriores</th>
         <th>Enfermedad de base</th>
         <th>Fracturas</th>
@@ -48,9 +48,9 @@
       <tr>
         <td data-title="Diganosico ID" scope="row">{{ diagnostico.id }}</td>
         <td data-title="Edad" scope="row">{{ diagnostico.Edad }}</td>
-        <td data-title="telefono" scope="row">{{ diagnostico.telefono }}</td>
-        <td data-title="Email" scope="row">{{ diagnostico.email }}</td>
-        <td data-title="Direccion" scope="row">{{ diagnostico.domicilio }}</td>
+        <td data-title="telefono" scope="row">{{ diagnostico.Telefono }}</td>
+        <td data-title="Email" scope="row">{{ diagnostico.Email }}</td>
+        <td data-title="Direccion" scope="row">{{ diagnostico.Domicilio }}</td>
         <td data-title="Objetivo fisico" scope="row">{{ diagnostico.Objetivo_Fisico }}</td>
         <td data-title="nivel de entrenamiento" scope="row">{{ diagnostico.Nivel_entrenamiento_años }}</td>
         <td data-title="frecuencia semanal" scope="row">{{ diagnostico.Frecuencia_semanal }}</td>
@@ -87,8 +87,33 @@
 
 {% block js_page %}
 <script>
-    $(document).ready(function(){
-        $('.table').dataTable();
+  $(document).ready(function() {
+    //$('#example').DataTable({
+         $(`.table`).DataTable({
+      "language": {
+       // "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+       "decimal": "",
+       "emptyTable": "No hay información",
+       "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+       "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+       "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+       "infoPostFix": "",
+       "thousands": ",",
+       "lengthMenu": "Mostrar _MENU_ Entradas",
+       "loadingRecords": "Cargando...",
+       "processing": "Procesando...",
+       "search": "Buscar:",
+       "zeroRecords": "Sin resultados encontrados",
+       "paginate": {
+           "first": "Primero",
+           "last": "Ultimo",
+           "next": "Siguiente",
+           "previous": "Anterior"
+       }
+      }
     });
-</script>
+  });
+
+
+</script>    
 {% endblock %}

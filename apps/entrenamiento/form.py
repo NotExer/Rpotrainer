@@ -17,14 +17,14 @@ class entrenamientoform(forms.ModelForm):
             'imagen',
         ]
         labels= {
-            'musculo':'Musculo',
+            'musculo':'Músculo',
             'ejercicio':'Ejercicio',
             'series':'Series',
             'repeticiones':'Repeticiones',
-            'rir':'Rir',
-            'cadencia':'cadencia',
-            'microPausa':'Micro Pausa',
-            'macroPausa':'Macro Pausa',
+            'rir':'Rir (Repeticiones en recamara)',
+            'cadencia':'Cadencia',
+            'microPausa':'Micro Pausa (min)',
+            'macroPausa':'Macro Pausa (min)',
             'descripcion': 'Descripción',
             'imagen':'Imagen'
         }

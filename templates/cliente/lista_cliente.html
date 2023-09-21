@@ -32,7 +32,7 @@
     <td data-title="FechaPago:" scope="row">{{ cliente.FechaPago }}</td>
     <td scope="row">
         <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_cliente' cliente.id %}')" role="button"><i class="fa fa-edit"></i></button>
-        <button href="#" class="btn btn-danger" onclick="return abrir_modal('{% url 'inactivar_cliente' cliente.id %}')" role="button"><i class="fa fa-star"></i></button>
+        <button href="#" class="btn btn-danger" onclick="return abrir_modal('{% url 'eliminar_cliente' cliente.id %}')" role="button"><i class="fa fa-trash"></i></button>
 
     </td>
     </tr>
@@ -63,8 +63,33 @@
 
 {% block js_page %}
 <script>
-    $(document).ready(function(){
-        $('.table').dataTable();
-    });
-</script>
+    $(document).ready(function() {
+        //$('#example').DataTable({
+             $(`.table`).DataTable({
+          "language": {
+           // "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+           "decimal": "",
+           "emptyTable": "No hay información",
+           "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+           "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+           "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+           "infoPostFix": "",
+           "thousands": ",",
+           "lengthMenu": "Mostrar _MENU_ Entradas",
+           "loadingRecords": "Cargando...",
+           "processing": "Procesando...",
+           "search": "Buscar:",
+           "zeroRecords": "Sin resultados encontrados",
+           "paginate": {
+               "first": "Primero",
+               "last": "Ultimo",
+               "next": "Siguiente",
+               "previous": "Anterior"
+           }
+          }
+        });
+      });
+
+
+</script>    
 {% endblock %}

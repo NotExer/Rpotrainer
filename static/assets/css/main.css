@@ -4213,11 +4213,23 @@ img {
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
+
 }
 
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
+
+.botn {
+	padding: 5px;
+}
+
+
+.botn:hover{
+border: 2px solid white;
+border-radius: 10px;
+}
+
 
 .cards {
   display: flex;

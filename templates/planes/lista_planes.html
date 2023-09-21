@@ -8,7 +8,7 @@
 </div>
 
 <div class="container_plan">
-    <a class="box_plan"  href="{% url 'lista_nutricion' %}">Plan de Nutricion</a>
+    <a class="box_plan"  href="{% url 'lista_nutricion' %}">Plan de Nutrición</a>
     <a class="box_plan" href="{% url 'lista_entrenamientos' %}">Plan de entrenamiento</a>
   </div>
   
@@ -49,7 +49,7 @@
         <td>
           <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
           <button href="#" class="btn btn-danger" onclick="return abrir_modal('{% url 'eliminar_planes' planes.id %}')" role="button" ><i class="fa fa-trash"></i></button>
-          <a class="btn btn-primary btn-circle" href="{% url 'print_planes' %}"><i class="fas fa-print"></i></a>
+          <a class="btn btn-primary btn-circle" href="{% url 'print_planes'%} "><i class="fas fa-print"></i></a>
 
         </td>
         
@@ -73,8 +73,33 @@
 
 {% block js_page %}
 <script>
-    $(document).ready(function(){
-        $('.table').dataTable();
+  $(document).ready(function() {
+    //$('#example').DataTable({
+         $(`.table`).DataTable({
+      "language": {
+       // "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+       "decimal": "",
+       "emptyTable": "No hay información",
+       "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+       "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+       "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+       "infoPostFix": "",
+       "thousands": ",",
+       "lengthMenu": "Mostrar _MENU_ Entradas",
+       "loadingRecords": "Cargando...",
+       "processing": "Procesando...",
+       "search": "Buscar:",
+       "zeroRecords": "Sin resultados encontrados",
+       "paginate": {
+           "first": "Primero",
+           "last": "Ultimo",
+           "next": "Siguiente",
+           "previous": "Anterior"
+       }
+      }
     });
-</script>
+  });
+
+
+</script>    
 {% endblock %}

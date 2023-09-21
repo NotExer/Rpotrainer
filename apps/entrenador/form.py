@@ -8,21 +8,18 @@ class entrenadorform(forms.ModelForm):
         
         fields = [
             'nombre',
-
             'correo',
             'numero_contacto',
         ]
         
         labels= {
-            'nombre': 'nombre',
-
-            'correo': 'correo',
-            'numero_contacto': 'numero de contacto',
+            'nombre': 'Nombre',
+            'correo': 'Correo',
+            'numero_contacto': 'Número de contacto',
         }
         
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-
             'correo': forms.EmailInput(attrs={'class': 'form-control'}),
             'numero_contacto': forms.TextInput(attrs={'class': 'form-control'}),
         }

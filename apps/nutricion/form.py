@@ -23,13 +23,13 @@ class nutricionform(forms.ModelForm):
             'hora':'Hora',
             'tipo_comida':'Tipo De Comida',
             'alimento':'Alimento',
-            'porcion':'Porcion',
+            'porcion':'Porción',
             'evitar':'Alimentos a evitar',
             'otras_recomendaciones' : 'Otras Recomendaciones',
             'ingesta_agua':'Ingesta de agua',
-            'dia_trampa' : 'Dia Trampa',
-            'suplementos' : 'Guia Suplementos',
-            'lista_compra' : 'Lista de compra'
+            'dia_trampa' : 'Día Trampa',
+            'suplementos' : 'Guía Suplementos',
+            'lista_compra' : 'Lista de compras'
         }
         widgets = {
             'dia': forms.TextInput(attrs={'class':'form-control'}),

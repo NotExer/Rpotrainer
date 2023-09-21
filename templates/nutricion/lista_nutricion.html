@@ -7,20 +7,22 @@
 </div>
 <div  class="style-title" >
 <button  class="btn btn-success" onclick="return abrir_modal('{% url 'crear_nutricion' %}')" role="button">Crear</button>
+<a class="btn btn-primary btn-circle" href="{% url 'print_nutricion' %}"><i class="fas fa-print"></i></a>
 </div>
 <div class="pad">
 <table >
 <thead>
     <tr>
-        <th>Dia</th>
+        <th>ID</th>
+        <th>Día</th>
         <th>Hora</th>
         <th>Tipo de comida</th>
         <th>Alimento</th>
-        <th>Porcion</th>
+        <th>Porción (gramos)</th>
         <th>Alimentos a evitar</th>
         <th>Otras recomendaciones</th>
         <th>Ingesta de agua</th>
-        <th>Dia trampa</th>
+        <th>Día trampa</th>
         <th>Suplementos</th>
         <th>Lista de compra</th>
     </tr>
@@ -28,6 +30,7 @@
 <tbody>
     {% for nutricion in obj %}
     <tr>
+    <td>{{ nutricion.id }}</td>
     <td>{{ nutricion.dia }}</td>
     <td>{{ nutricion.hora }}</td>
     <td>{{ nutricion.tipo_comida }}</td>
@@ -41,8 +44,8 @@
     <td>{{ nutricion.lista_compra }}</td>
 
     <td>
-        <button href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="btn btn-success"><i class="fa fa-edit"></i></button>
-        <button href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+        <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_nutricion' nutricion.id %}')" role="button"><i class="fa fa-edit"></i></button>
+          <button href="#" onclick="return abrir_modal('{% url 'eliminar_nutricion' nutricion.id %}')" class="btn btn-danger" role="button"><i class="fa fa-toggle-off"></i></button>
     </td>
     </tr>
     {% endfor %}
@@ -62,8 +65,33 @@
 
 {% block js_page %}
 <script>
-    $(document).ready(function(){
-        $('.table').dataTable();
+  $(document).ready(function() {
+    //$('#example').DataTable({
+         $(`.table`).DataTable({
+      "language": {
+       // "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+       "decimal": "",
+       "emptyTable": "No hay información",
+       "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+       "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+       "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+       "infoPostFix": "",
+       "thousands": ",",
+       "lengthMenu": "Mostrar _MENU_ Entradas",
+       "loadingRecords": "Cargando...",
+       "processing": "Procesando...",
+       "search": "Buscar:",
+       "zeroRecords": "Sin resultados encontrados",
+       "paginate": {
+           "first": "Primero",
+           "last": "Ultimo",
+           "next": "Siguiente",
+           "previous": "Anterior"
+       }
+      }
     });
-</script>
+  });
+
+
+</script>    
 {% endblock %}
