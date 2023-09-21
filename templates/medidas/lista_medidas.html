@@ -15,16 +15,16 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Brazo Izquierdo</th>
-        <th>Brazo Derecho</th>
-        <th>Torax</th>
-        <th>Brazo Relajado</th>
-        <th>Cadera</th>
-        <th>Cintura</th>
-        <th>Muslo Derecho Contraido</th>
-        <th>Muslo Izquierdo Contraido</th>
-        <th>Pantorrilla Derecha Contraida</th>
-        <th>Pantorrilla Izquierda Contraida</th>
+        <th>Brazo Izquierdo (cm) </th>
+        <th>Brazo Derecho (cm) </th>
+        <th>Torax (cm) </th>
+        <th>Brazo Relajado (cm) </th>
+        <th>Cadera (cm) </th>
+        <th>Cintura (cm) </th>
+        <th>Muslo Derecho Contraido (cm) </th>
+        <th>Muslo Izquierdo Contraido (cm) </th>
+        <th>Pantorrilla Derecha Contraida (cm) </th>
+        <th>Pantorrilla Izquierda Contraida (cm) </th>
       </tr>
     </thead>
     <tbody>
@@ -42,15 +42,16 @@
         <td>{{ medidas.Pantorrilla_Derecha_Contraida }}</td>
         <td>{{ medidas.Pantorrilla_Izquierda_Contraida }}</td>
         <td>
-          <a href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_medidas' medidas.id %}')" role="button"><i class="fa fa-edit"></i></a>
-          <a href="#" onclick="return abrir_modal('{% url 'eliminar_medidas' medidas.id %}')" class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></a>
+          <a href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_medidas' medidas.id %}')" role="button"><i class="fa fa-edit"></i></a>
+          <a href="#" onclick="return abrir_modal('{% url 'eliminar_medidas' medidas.id %}')" class="btn btn-danger" role="button"><i class="fa fa-toggle-off"></i></a>
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
   <div>
-   
+
+    
 {% endblock %}  
 
 {%block scripts_local%}

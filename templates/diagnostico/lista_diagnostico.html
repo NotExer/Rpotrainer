@@ -4,7 +4,7 @@
 
 
 <div  class="style-title" >
-  <h1 class="titulo">Diagnostico</h1>
+  <h1 class="titulo">Diagnóstico</h1>
 </div>
 <div  class="style-title" >
 <button href="#" class="btn btn-success"  onclick="return abrir_modal('{% url 'crear_diagnostico' %}')" role="button">Crear</button>
@@ -65,8 +65,8 @@
         <td data-title="fracturas" scope="row">{{ diagnostico.Fracturas }}</td>
         <td data-title="tiepo de sueño" scope="row">{{ diagnostico.Tiempo_sueño }}</td>
         <td>
-          <button href="#" class="boton_editar" onclick="return abrir_modal('{% url 'editar_diagnostico' diagnostico.id %}')" role="button"><i class="fa fa-edit"></i></button>
-          <button href="#" onclick="return abrir_modal('{% url 'eliminar_diagnostico' diagnostico.id %}')" class="boton_eliminar" role="button"><i class="fa fa-toggle-off"></i></button>
+          <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_diagnostico' diagnostico.id %}')" role="button"><i class="fa fa-edit"></i></button>
+          <button href="#" onclick="return abrir_modal('{% url 'eliminar_diagnostico' diagnostico.id %}')" class="btn btn-danger" role="button"><i class="fa fa-toggle-off"></i></button>
         </td>
       </tr>
       {% endfor %}

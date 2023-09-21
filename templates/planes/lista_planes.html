@@ -48,6 +48,7 @@
         <td> {{ planes.modalidad }}</td>
         <td>
           <button href="#" class="btn btn-success" onclick="return abrir_modal('{% url 'editar_planes' planes.id %}')" role="button" ><i class="fa fa-edit"></i></button>
+          <button href="#" class="btn btn-danger" onclick="return abrir_modal('{% url 'eliminar_planes' planes.id %}')" role="button" ><i class="fa fa-trash"></i></button>
           <a class="btn btn-primary btn-circle" href="{% url 'print_planes' %}"><i class="fas fa-print"></i></a>
 
         </td>
@@ -61,3 +62,19 @@
 
 {% endblock %}  
 
+
+{%block scripts_local%}
+<script>
+    $(document).ready(function (){
+        jQuery.datetimepicker.setlocale('es')
+    });
+</script>
+{% endblock scripts_local%}
+
+{% block js_page %}
+<script>
+    $(document).ready(function(){
+        $('.table').dataTable();
+    });
+</script>
+{% endblock %}

@@ -1,7 +1,5 @@
 {% extends 'index/index.html' %}
 {% block content %}
-     
-
 
 
 <div  class="style-title" >
@@ -43,17 +41,14 @@
     <td>{{ nutricion.lista_compra }}</td>
 
     <td>
-        <a href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="boton_editar">Editar</a>
-        <a href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="boton_eliminar">Eliminar</a>
+        <button href="{% url 'editar_nutricion' pk=nutricion.pk %}" class="btn btn-success"><i class="fa fa-edit"></i></button>
+        <button href="{% url 'eliminar_nutricion' pk=nutricion.pk %}" class="btn btn-danger"><i class="fa fa-trash"></i></button>
     </td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
 
-
-
-<div>
 
 {% endblock %} 
 
@@ -71,4 +66,4 @@
         $('.table').dataTable();
     });
 </script>
-{% endblock %} 
+{% endblock %}
